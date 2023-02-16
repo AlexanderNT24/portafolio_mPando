@@ -13,6 +13,7 @@ li {
 
 .navbar-header:hover {
     text-decoration: underline;
+    font-style: italic;
 }
 
 .navbar-propio { 
@@ -29,6 +30,7 @@ li {
     
 .navbar-item:hover {
     text-decoration: underline;
+    font-style: italic;
 }
 
 .navbar-especial{
@@ -41,4 +43,10 @@ li {
 .list-item{
     padding-left: 16px;
     padding-top: 16px;
+    color: #1C6181 !important;
+    padding-right: 22px !important;
+}
+.list-item:hover{
+    text-decoration: underline;
+    font-style: italic;
 }
