@@ -1,0 +1,44 @@
+body{
+    padding-left: 16px;
+}
+
+li {
+    list-style-type: none; 
+ }
+
+.navbar-header{
+    color: #1C6181 !important;
+    padding-right: 22px;
+}
+
+.navbar-header:hover {
+    text-decoration: underline;
+}
+
+.navbar-propio { 
+    font-family: Courier New,Courier,monospace;
+    font-size: 14px;
+    
+}
+
+.navbar-item{
+    font-style: italic;
+    color: #1C6181 !important;
+    padding-right: 22px !important;
+}
+    
+.navbar-item:hover {
+    text-decoration: underline;
+}
+
+.navbar-especial{
+    color: #000000 !important;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline
+}
+
+.list-item{
+    padding-left: 16px;
+    padding-top: 16px;
+}

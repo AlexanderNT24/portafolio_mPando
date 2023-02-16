@@ -1,0 +1,78 @@
+{%extends 'layout.html'%}
+{% block content%}
+
+<div class="row border-row">
+    
+      <div data-aos="zoom-out" class="col-6 border-right  size-center blue">
+        <span>About me:</span>
+        <h3>I'm a artist</h3>
+        <p>In my work I am telling stories in a poetic language, which follow geographical and historical boundaries. Living between Europe and South America I adapted to the cultural differences, wherein I can experience myself as a bridge between the European culture and my origins. I regard myself as an explorer discovering my own peripheries in Europe. From one place to another I collect information about culture identities, showing their parallels in different contexts.
+
+With an increase in both enforced and voluntary geographical exile or nomadism and globalization of goods, artists are interrogating what cultural identity is, questioning these traditional ideas of origin and immigration. Rather than setting one fixed root against another, the ‘origin‘ against an integrating and homogenizing ‘soil‘, artists explore the process of mutation.¹
+
+In other words, artist intentionally step back from one-sided approach to cultural identity and put the emphasis on making connections between different cultures, taking charge of that and creating translations.² According to Bourriaud travelling has become a new medium for artists in its own right. Translating, transposing, relocating, the road movie, exoticism: these are all ideas that originated with travel.
+
+In Pando‘s work, these ideas, exile (the term Bourriaud uses) and travel, cannot be separated from one another.  
+
+Ingrid Commandeur (art critic and researcher)
+
+¹Nicolas Bourriaud, Altermodern: Tate Triennial 2009 (London: Tate Publishing,2009), 20.
+
+²Christophe Gallois, ‘An Archipelago of Local Reactions: Nicolas Bourriaud on the Altermodern‘, Metropolis M (2009) no.1.
+           </div>
+      <div data-aos="zoom-out"class="col black">
+       
+        <ul class="list-group">
+            <li class=" d-flex justify-content-between align-items-center">
+                <i class="bi bi-geo-alt-fill"></i> Lima - Peru
+                </li>
+            <li class=" d-flex justify-content-between align-items-center">
+                <i class="bi bi-envelope-fill"></i> mpandoquevedo@gmail.com
+              </li>
+            <li class=" d-flex justify-content-between align-items-center">
+              <i class="bi bi-instagram"></i> marco.pando.quevedo
+            </li>           
+          </ul>
+          <hr>
+
+    </div>
+      </div>
+  </div>
+    <div class="row border-row" >
+      <div class="col" data-aos="fade-down">
+        <h2><strong>My proyects:</strong> </h2>
+      </div>
+    </div>
+
+  <div class="row border-row">
+
+        {% for project in projects%}
+        
+        <div class="col-6">
+            <div data-aos="fade-down"
+            data-aos-easing="linear"
+            data-aos-duration="500">
+                 <div style="height: 20px;"></div>
+            <div class="container-img cardAmp">
+                <a class="card-link" href="{{project.url}}">
+                <img src="{{project.image.url}}" alt="Avatar" class="image img-fluid" style="width:100%">
+                <div class="middle">
+                  <div class="text">
+                    
+                    <h5 class="card-title" style="font-size: 15px;">{{project.title}}</h5>
+                    <hr>
+                    <p>
+                        {{project.description}}
+                    </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+              </div>
+
+        </div>
+        {% endfor %}
+        <div style="height: 20px;"></div>
+  </div>
+
+{% endblock %}
