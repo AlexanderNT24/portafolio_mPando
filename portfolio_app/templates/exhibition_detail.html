@@ -1,0 +1,19 @@
+{%extends 'layout.html'%}
+{% block content%}
+
+<div class="post_title">
+    <h2>{{ exhibition.title }}.{{ exhibition.ubication }},{{ exhibition.city }} </h2>
+    <h3>
+        {{ exhibition.date }}
+    </h3>
+</div>
+
+<h3>Exhibition views:</h3>
+<ul>
+  {% for exhibition_view in exhibition.exhibition_view_set.all %}
+    <img src="{{exhibition_view.image.url}}" alt="Avatar" class="image img-fluid" style="width:100%">
+    <li>{{ exhibition_view.title }} - {{ exhibition_view.description }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}
+

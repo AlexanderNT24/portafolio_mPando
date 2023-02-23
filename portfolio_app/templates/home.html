@@ -1,10 +1,9 @@
 {%extends 'layout.html'%}
 {% block content%}
 
-
   <div class="row border-row">
 
-        {% for project in projects%}
+        {% for exhibition in exhibitions%}
         
         <div class="col-6">
             <div data-aos="fade-down"
@@ -12,15 +11,15 @@
             data-aos-duration="500">
                  <div style="height: 20px;"></div>
             <div class="container-img cardAmp">
-                <a class="card-link" href="{{project.url}}">
-                <img src="{{project.image.url}}" alt="Avatar" class="image img-fluid" style="width:100%">
+                <a class="card-link" href="{% url 'exhibition:exhibition_detail' exhibition.id%}">
+                <img src="{{exhibition.image.url}}" alt="Avatar" class="image img-fluid" style="width:100%">
                 <div class="middle">
                   <div class="text">
                     
-                    <h5 class="card-title" style="font-size: 15px;">{{project.title}}</h5>
+                    <h5 class="card-title" style="font-size: 15px;">{{exhibition.title}}</h5>
                     <hr>
                     <p>
-                        {{project.description}}
+                        {{exhibition.description}}
                     </p>
                     </div>
                 </div>
@@ -32,5 +31,7 @@
         {% endfor %}
         <div style="height: 20px;"></div>
   </div>
+
+
 
 {% endblock %}
