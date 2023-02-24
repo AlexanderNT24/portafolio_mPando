@@ -11,7 +11,7 @@
       </a>
       </picture>
       <div class="exhibition-detail">
-        <p class="card-title" style="font-size: 15px;">{{exhibition.title}}. {{exhibition.description}}</p>
+        <p class="card-title" style="font-size: 15px;">{{exhibition.title}}. {{exhibition.description|striptags|truncatechars:10}}</p>
       </div>
       
     <div style="height: 20px;"></div>

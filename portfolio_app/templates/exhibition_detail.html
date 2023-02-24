@@ -15,11 +15,11 @@
     </ul>
   </div>
 </nav>
-
+<p>Exhibition Views</p>
 <div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
   <div class="carousel-inner">
     {% for exhibition_view in exhibition.exhibition_view_set.all %}
-    <div id="Image" class="carousel-item">
+    <div id="Images" class="carousel-item">
       <div class="card">
           <div class="card-body">
             <img src="{{exhibition_view.image.url}}" class="d-block w-100" alt="Exhibition">
