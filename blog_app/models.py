@@ -7,4 +7,5 @@ class Post(models.Model):
     title=CharField(max_length=100)
     description=TextField(max_length=1000)
     image=ImageField(upload_to='blog_app/images')
-    date=DateField(datetime.date.today)
+    start_date=DateField(datetime.date.today,null=True)
+    end_date=DateField(datetime.date.today,null=True)

@@ -14,7 +14,7 @@
     <p>
         {{post.title}}.{{post.description|striptags|truncatechars:100}}
     </p>
-    <p>{{post.date|date:'M d y'}}</p>
+    <p>{{post.start_date|date:'M d y'}}-{{post.end_date|date:'M d y'}}</p>
     
     
   </div>
