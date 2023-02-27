@@ -7,17 +7,14 @@
       <picture>
         <a class="card-link" href="{% url 'exhibition:exhibition_detail' exhibition.id%}">
         <source srcset="{{exhibition.image.url}}" type="image/svg+xml">  
-        <img src="{{exhibition.image.url}}" class="img-fluid img-thumbnail" alt="Avatar">
+        <img src="{{exhibition.image.url}}" class="img-fluid" alt="Avatar">
       </a>
       </picture>
       <div class="exhibition-detail">
-        <p class="card-title" style="font-size: 15px;">{{exhibition.title}}. {{exhibition.description|striptags|truncatechars:10}}</p>
-      </div>
-      
+        <p class="card-title description-exhibition-tag"><i>{{exhibition.title}}. {{exhibition.description|striptags|truncatechars:10}}</i></p>
+      </div>   
     <div style="height: 20px;"></div>
-
     </div>
-    
     {% endfor %}
   </div>
 </div>

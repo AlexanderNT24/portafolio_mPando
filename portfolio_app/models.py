@@ -7,7 +7,7 @@ class Exhibition(models.Model):
     ubication=CharField(null=True,max_length=150)
     city=CharField(null=True,max_length=250)
     date=DateField(null=True)
-    description=TextField(max_length=1000)
+    description=TextField(max_length=10000)
     image=ImageField(upload_to='portfolio_app/images')
 
 class Exhibition_View(models.Model):

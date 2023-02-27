@@ -1,23 +1,17 @@
 {%extends 'layout.html'%}
 {% block content%}
 <link rel="stylesheet" type="text/css" href="/static/css/carousel.css">
-<div id="Description" class="carousel-item">
-    <div class="card-especial">
-        <div class="card-body">
-            <h2>
-                {{post.title}}
-            </h2>
+<div class="container text-center">
+    <div id="Description" class="carousel-item">
+        <p class="description-post-tag"><strong>{{post.title}}</strong>({{post.start_date|date:'Y'}}-{{post.end_date|date:'Y'}})</p>
             <img src="{{post.image.url}}" alt="{{post.title}}"/>
-            <h3>{{post.date}}</h3>
-            <div style="height:100px; overflow-y: scroll;">
-                <p>{{post.description}}</p>
+            <div style="height: 20px;"></div>
+            <textarea style="height:200px; background-color: white;  width: 600px; resize: none;" disabled>
+                {{post.description}}
+            </textarea>
+      </div>
+</div>
 
-            </div>
-          
-        </div>
-        
-    </div>
-  </div>
 
 {% endblock %}
 

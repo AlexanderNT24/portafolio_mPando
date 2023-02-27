@@ -3,6 +3,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/static/css/carousel.css">
 
+<div class="container-fluid">
+  <p class="description-post-tag"><strong>{{exhibition.title}}. {{exhibition.ubication}}, {{exhibition.city}}</strong> ({{exhibition.date|date:'Y'}})</p>
+</div>
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <ul class="navbar-nav">
@@ -12,7 +16,6 @@
       <li class="nav-item">
         <a class="nav-link active navbar-item" aria-current="page" href="#Description">Text</a>
       </li>
-      
     </ul>
   </div>
 </nav>
@@ -27,19 +30,14 @@
           </div>
           <p>{{exhibition_view.title}}. {{exhibition_view.description}}</p>
       </div>
-    </div>
-        
+    </div> 
     {% endfor %}
     <div id="Description" class="carousel-item">
-      <div class="card-especial">
-          <div class="card-body" style="height:400px; overflow-y: scroll;">
-            <p>{{exhibition.description}}</p>
-          </div>
-          
-      </div>
+      <textarea style="height:400px; background-color: white; resize: none;" disabled>
+        {{exhibition.description}}
+      </textarea>
     </div>
   </div>
-  
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
