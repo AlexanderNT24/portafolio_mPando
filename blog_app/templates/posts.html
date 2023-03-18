@@ -1,22 +1,16 @@
 {%extends 'layout.html'%}
-
 {% block content%}
-
 <div class="container text-center">
     <div class="row row-cols-2">
-
-
-
-{% for post in posts%}
-
-<div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="700" class="col">
-    <a href="{% url 'blog:post_detail' post.id%}">
-        <img src="{{post.image.url}}" class="img-fluid" alt="{{post.title}}">
-    </a>
-    <p class="description-post-tag">{{post.title}}.{{post.description|striptags|truncatechars:10}}</p>
-    <p class="description-post-tag">{{post.start_date|date:'m.d.y'}} - {{post.end_date|date:'m.d.y'}}</p> 
-  </div>
-{% endfor %}
-</div>
+    {% for post in posts%}
+    <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="700" class="col">
+        <a href="{% url 'blog:post_detail' post.id%}">
+            <img src="{{post.image.url}}" class="img-fluid" alt="{{post.title}}">
+        </a>
+        <p class="description-post-tag">{{post.title}}.{{post.description|striptags|truncatechars:10}}</p>
+        <p class="description-post-tag">{{post.start_date|date:'m.d.y'}} - {{post.end_date|date:'m.d.y'}}</p> 
+    </div>
+    {% endfor %}
+    </div>
 </div>
 {% endblock %}
