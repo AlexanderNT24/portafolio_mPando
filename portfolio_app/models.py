@@ -9,7 +9,7 @@ class Exhibition(models.Model):
     date=DateField(null=True)
     description=TextField(max_length=10000)
     image=ImageField(upload_to='portfolio_app/images')
-    video_url=URLField(blank=True)
+    video_url=URLField(blank=True,null=True)
 
 class Exhibition_View(models.Model):
     exhibition = models.ForeignKey(Exhibition, on_delete=models.CASCADE)

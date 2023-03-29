@@ -11,16 +11,23 @@
   <div class="container-fluid">
     <ul class="navbar-nav">
       <li class="nav-item">
+        <a class="nav-link active navbar-item" aria-current="page" href="#Description">Text</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link navbar-item" href="#Images">Exhibition Views</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active navbar-item" aria-current="page" href="#Description">Text</a>
+        <a class="nav-link active navbar-item" aria-current="page" href="#Video">Video</a>
       </li>
     </ul>
   </div>
 </nav>
-
-<div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
+<div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="700" id="Description" style="padding: 14px; background-color: white;">
+  <textarea style="height:300px; width: 600px;background-color: white; resize: none;" disabled>
+    {{exhibition.description}}
+  </textarea>
+</div>
+<div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="700" id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
   <div class="carousel-inner">
     {% for exhibition_view in exhibition.exhibition_view_set.all %}
     <div id="Images" class="carousel-item">
@@ -32,11 +39,6 @@
       </div>
     </div> 
     {% endfor %}
-    <div id="Description" class="carousel-item">
-      <textarea style="height:400px; background-color: white; resize: none;" disabled>
-        {{exhibition.description}}
-      </textarea>
-    </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -47,6 +49,7 @@
       <span class="visually-hidden">Next</span>
   </button>
 </div>
+<iframe data-aos="fade-down" data-aos-easing="linear" data-aos-duration="700" id="Video" src="{{exhibition.video_url}}" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 
 <script src="/static/js/carouselJquery.js"></script>
 {% endblock %}
