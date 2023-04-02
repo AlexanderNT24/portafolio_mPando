@@ -13,7 +13,7 @@ class Exhibition(models.Model):
 
 class Exhibition_View(models.Model):
     exhibition = models.ForeignKey(Exhibition, on_delete=models.CASCADE)
-    title=CharField(max_length=100)
-    description=TextField(max_length=250)
+    title=CharField(max_length=100,blank=True)
+    description=TextField(max_length=250,blank=True)
     image=ImageField(upload_to='portfolio_app/images')
     
