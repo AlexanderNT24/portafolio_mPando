@@ -1,55 +1,70 @@
 {%extends 'layout.html'%}
 {% block content%}
+<div class="container">
+  <div class="container-fluid">
+    <p class="description-post-tag">
+      <strong>
+      {{exhibition.title}}. 
+      {% if exhibition.ubication %}
+      {{exhibition.ubication}}, 
+      {% endif %}
+      {% if exhibition.city %}
+      {{exhibition.city}}
+      {% endif %}
+    </strong> 
+    ({{exhibition.date|date:'Y'}})</p>
+  </div>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active navbar-item" aria-current="page" href="#Description">Text</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link navbar-item" href="#Images">Exhibition Views</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active navbar-item" aria-current="page" href="#Video">Video</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="700" id="Description" style="padding: 14px; background-color: white;">
+    <textarea style="height:300px; width: 600px;background-color: white; resize: none;" disabled>
+      {{exhibition.description}}
+    </textarea>
+  </div>
+  <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="700" id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      {% for exhibition_view in exhibition.exhibition_view_set.all %}
+      <div id="Images" class="carousel-item">
+        <div class="card">
+            <div class="card-body">
+              <img src="{{exhibition_view.image.url}}" class="d-block w-100" alt="Exhibition">
+            </div>
+            {% if exhibition_view.title %}
+            <p>{{exhibition_view.title}}. {{exhibition_view.description}}</p>
+            {% endif %}
+        </div>
+      </div> 
+      {% endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  {% if exhibition.video_url %}
+  <iframe data-aos="fade-down" data-aos-easing="linear" data-aos-duration="700" id="Video" src="{{exhibition.video_url}}" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+  {% endif %}
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/static/css/carousel.css">
 
-<div class="container-fluid">
-  <p class="description-post-tag"><strong>{{exhibition.title}}. {{exhibition.ubication}}, {{exhibition.city}}</strong> ({{exhibition.date|date:'Y'}})</p>
-</div>
-
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link active navbar-item" aria-current="page" href="#Description">Text</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link navbar-item" href="#Images">Exhibition Views</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active navbar-item" aria-current="page" href="#Video">Video</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-<div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="700" id="Description" style="padding: 14px; background-color: white;">
-  <textarea style="height:300px; width: 600px;background-color: white; resize: none;" disabled>
-    {{exhibition.description}}
-  </textarea>
-</div>
-<div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="700" id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    {% for exhibition_view in exhibition.exhibition_view_set.all %}
-    <div id="Images" class="carousel-item">
-      <div class="card">
-          <div class="card-body">
-            <img src="{{exhibition_view.image.url}}" class="d-block w-100" alt="Exhibition">
-          </div>
-          <p>{{exhibition_view.title}}. {{exhibition_view.description}}</p>
-      </div>
-    </div> 
-    {% endfor %}
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-  </button>
-</div>
-<iframe data-aos="fade-down" data-aos-easing="linear" data-aos-duration="700" id="Video" src="{{exhibition.video_url}}" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 
 <script src="/static/js/carouselJquery.js"></script>
 {% endblock %}

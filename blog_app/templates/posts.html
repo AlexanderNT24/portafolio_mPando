@@ -8,7 +8,13 @@
             <img src="{{post.image.url}}" class="img-fluid" alt="{{post.title}}">
         </a>
         <p class="description-post-tag">{{post.title}}.{{post.description|striptags|truncatechars:10}}</p>
-        <p class="description-post-tag">{{post.start_date|date:'m.d.y'}} - {{post.end_date|date:'m.d.y'}}</p> 
+        <p class="description-post-tag">
+            {% if post.start_date %}
+            {{post.start_date|date:'m.d.y'}}  
+            {% endif %}
+            {% if post.end_date %}
+            -{{post.end_date|date:'m.d.y'}}</p> 
+            {% endif %}
     </div>
     {% endfor %}
     </div>

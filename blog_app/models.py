@@ -5,7 +5,7 @@ import datetime
 
 class Post(models.Model):
     title=CharField(max_length=100)
-    description=TextField(max_length=1000)
+    description=TextField(max_length=10000,blank=True)
     image=ImageField(upload_to='blog_app/images')
-    start_date=DateField(datetime.date.today,null=True)
-    end_date=DateField(datetime.date.today,null=True)
+    start_date=DateField(datetime.date.today,null=True,blank=True)
+    end_date=DateField(datetime.date.today,null=True,blank=True)

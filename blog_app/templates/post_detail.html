@@ -3,7 +3,14 @@
 <link rel="stylesheet" type="text/css" href="/static/css/carousel.css">
 <div class="container text-center">
     <div id="Description" class="carousel-item">
-        <p class="description-post-tag"><strong>{{post.title}}</strong>({{post.start_date|date:'Y'}}-{{post.end_date|date:'Y'}})</p>
+        <p class="description-post-tag"><strong>{{post.title}}</strong>
+            {% if post.start_date %}
+            ({{post.start_date|date:'Y'}}
+            {% endif %}
+            {% if post.end_date %}
+            -{{post.end_date|date:'Y'}}
+            {% endif %})
+        </p>
             <img src="{{post.image.url}}" alt="{{post.title}}"/>
             <div style="height: 20px;"></div>
             <textarea style="height:200px; background-color: white;  width: 600px; resize: none;" disabled>
