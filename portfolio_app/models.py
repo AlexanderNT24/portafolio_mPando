@@ -10,6 +10,7 @@ class Exhibition(models.Model):
     description=TextField(max_length=10000)
     image=ImageField(upload_to='portfolio_app/images')
     video_url=URLField(blank=True,null=True)
+    password=CharField(null=True,max_length=250,blank=True)
 
 class Exhibition_View(models.Model):
     exhibition = models.ForeignKey(Exhibition, on_delete=models.CASCADE)

@@ -10,6 +10,7 @@ class ExhibitionAdmin(admin.ModelAdmin):
     inlines = [
         ExhibitionViewInline,
     ]
+    list_display = ('title',) 
 
 admin.site.register(Exhibition, ExhibitionAdmin)
 admin.site.register(Exhibition_View)

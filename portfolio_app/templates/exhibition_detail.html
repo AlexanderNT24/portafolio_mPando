@@ -59,12 +59,19 @@
     </button>
   </div>
   {% if exhibition.video_url %}
-  <iframe data-aos="fade-down" data-aos-easing="linear" data-aos-duration="700" id="Video" src="{{exhibition.video_url}}" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+  {% if exhibition.password %}
+  <p>Contraseña: {{exhibition.password}}</p>
+  {% endif %}
+  <div style="padding:75% 0 0 0;position:relative;">
+    <iframe src="{{exhibition.video_url}}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="8 horas de trabajo-Marco Pando">
+    </iframe>
+  </div>
+  <script src="https://player.vimeo.com/api/player.js">
+  </script>
   {% endif %}
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/static/css/carousel.css">
-
 
 <script src="/static/js/carouselJquery.js"></script>
 {% endblock %}
