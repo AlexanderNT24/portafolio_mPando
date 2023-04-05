@@ -1,9 +1,0 @@
-1.iniciamos poryecto django-admin startproject portfolio .
-Control c cancelamos
-2. corremos servidor python manage.py runserver
-3. Vamos a crear dos aplicaciones una de portafolio y otra de blog para ello ejecutamos python manage.py startapp blog
-4. Creamos otra aplicacion python manage.py startapp portfolio
-5. ejecutamos migraciones python manage.py makemigrations
-6. para crear nuestras tablas python manage.py migrate   
-7. creamos un superusuario python manage.py createsuperuser
-8. contraseña alex_123

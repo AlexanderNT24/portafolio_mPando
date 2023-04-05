@@ -1,5 +1,0 @@
-Anotaciones:
-1. instalamos un entorno virtual pip install virtualenv
-2. instalamos el paquete para el entorno vritaul de nuestro proyecto python  por convención es recomendable llamarlo venv. -m virtualenv venv
-3. ya esta activada por default
-4. seleccionamos el python con entrono virtual en el interprete e instalamos django
