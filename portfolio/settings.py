@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 from django.conf import settings
+
 settings.FILE_UPLOAD_MAX_MEMORY_SIZE = 104857600
 
 
@@ -26,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-$&(dj(e=-^$ey(y$33y3oturw&z&6i6+tt9vo%fjssdb^cp*@f'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['176.126.87.42', 'localhost']
 
