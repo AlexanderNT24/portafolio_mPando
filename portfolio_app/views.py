@@ -2,10 +2,9 @@ from django.shortcuts import render,get_object_or_404
 from .models import Exhibition
 
 def home(request):
-    exhibitions = Exhibition.objects.all()
+    exhibitions = Exhibition.objects.filter(hidden=False)
     context = {'exhibitions': exhibitions}
     return render(request, 'home.html', context)
-
 
 def exhibition_detail(request,exhibition_id):
     exhibition = get_object_or_404(Exhibition, pk=exhibition_id)

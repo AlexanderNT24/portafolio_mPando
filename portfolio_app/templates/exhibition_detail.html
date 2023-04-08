@@ -1,5 +1,6 @@
 {%extends 'layout.html'%}
 {% block content%}
+<script src="/static/js/fancybox.js"></script>
 <div class="container">
   <div class="container-fluid">
     <p class="description-post-tag">
@@ -20,27 +21,34 @@
         <li class="nav-item">
           <a class="nav-link active navbar-item" aria-current="page" href="#Description">Text</a>
         </li>
+        {% if exhibition.exhibition_view_set.all %}
         <li class="nav-item">
           <a class="nav-link navbar-item" href="#Images">Exhibition Views</a>
         </li>
+        {% endif %}
+        {% if exhibition.video_url %}
         <li class="nav-item">
           <a class="nav-link active navbar-item" aria-current="page" href="#Video">Video</a>
         </li>
+        {% endif %}
       </ul>
     </div>
   </nav>
   <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="700" id="Description" style="padding: 14px; background-color: white;">
-    <textarea style="height:300px; width: 600px;background-color: white; resize: none;" disabled>
+    <textarea style="height:300px; width: 600px;background-color: white; resize: none; border: none;" disabled>
       {{exhibition.description}}
     </textarea>
   </div>
+  {% if exhibition.exhibition_view_set.all %}
   <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="700" id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
     <div class="carousel-inner">
       {% for exhibition_view in exhibition.exhibition_view_set.all %}
       <div id="Images" class="carousel-item">
         <div class="card">
             <div class="card-body">
-              <img src="{{exhibition_view.image.url}}" class="d-block w-100" alt="Exhibition">
+              <a class="gallery-image" rel="gallery" href="{{exhibition_view.image.url}}">
+                <img src="{{exhibition_view.image.url}}" class="d-block w-100" alt="Exhibition"/>
+              </a>
             </div>
             {% if exhibition_view.title %}
             <p>{{exhibition_view.title}}. {{exhibition_view.description}}</p>
@@ -58,10 +66,12 @@
         <span class="visually-hidden">Next</span>
     </button>
   </div>
+  {% endif %}
   {% if exhibition.video_url %}
   {% if exhibition.password %}
   <p>Contraseña: {{exhibition.password}}</p>
   {% endif %}
+  
   <div style="padding:75% 0 0 0;position:relative;">
     <iframe src="{{exhibition.video_url}}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="8 horas de trabajo-Marco Pando">
     </iframe>
@@ -70,7 +80,7 @@
   </script>
   {% endif %}
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
 <link rel="stylesheet" type="text/css" href="/static/css/carousel.css">
 
 <script src="/static/js/carouselJquery.js"></script>

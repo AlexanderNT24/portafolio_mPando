@@ -11,9 +11,9 @@
             -{{post.end_date|date:'Y'}}
             {% endif %})
         </p>
-            <img src="{{post.image.url}}" alt="{{post.title}}"/>
+            <img class="single-image" src="{{post.image.url}}" alt="{{post.title}}"/>
             <div style="height: 20px;"></div>
-            <textarea style="height:200px; background-color: white;  width: 600px; resize: none;" disabled>
+            <textarea style="height:200px; background-color: white;  width: 600px; resize: none;border: none;" disabled>
                 {{post.description}}
             </textarea>
       </div>
