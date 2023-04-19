@@ -20,26 +20,26 @@
     
     $(".gallery-image").fancybox({
       openEffect : 'fade', 
-        closeEffect	: 'fade',
-        closeBtn: false,
-        helpers : {
+      closeEffect : 'fade',
+      closeBtn: false,
+      helpers : {
           title : {
-            type : 'over' //'float', 'inside', 'outside' or 'over'
+              type : 'over' //'float', 'inside', 'outside' or 'over'
           },
           thumbs : {
-                width: 50
-            },
-            buttons	: {},
-            overlay : {
-                css : {
-                    'background' : 'rgba(0,0,0,0.5)'
-                }
-            }
-        
-        }
-                  
-    });
-    
+              width: 50
+          },
+          buttons : {},
+          overlay : {
+              css : {
+                  'background' : 'rgba(0,0,0,0.5)'
+              }
+          },
+          arrows : {
+              position : 'outside' // Ubica las flechas fuera de la imagen
+          }
+      }          
+  });
     
     $(".fancyOther").fancybox({
       width		: '70%',

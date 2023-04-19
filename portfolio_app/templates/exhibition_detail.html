@@ -57,11 +57,11 @@
       </div> 
       {% endfor %}
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <button style="height: 30px; width: 30px;" class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <button style="height: 30px; width: 30px;" class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>
@@ -76,10 +76,11 @@
     <iframe src="{{exhibition.video_url}}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="{{exhibition.title}}">
     </iframe>
     <div class="overlay">
-      <a class="fancyMedia" data-fancybox-type="iframe" href="{{exhibition.video_url}}"><i class="bi bi-fullscreen"></i></a>
+      <a class="fancyMedia" data-fancybox-type="iframe" href="{{exhibition.video_url}}"><i style="font-weight:bold ;" class="iconFancy bi bi-fullscreen"></i></a>
     </div>
   </div>
   <style>
+    
     .overlay {
   position: absolute;
   top: 20%;
@@ -87,6 +88,13 @@
   transform: translate(-50%, -50%);
   z-index: 1;
 }
+.fancyMedia:hover  {
+  background-color: #00adefff !important;
+}
+.fancyMedia:hover .iconFancy  {
+  color: #000;
+}
+
 
 .overlay a {
   color: white;
@@ -96,8 +104,9 @@
   padding: 15px;
 
   border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgb(0, 0, 0);
 }
+
 
   </style>
 </a>

@@ -1,13 +1,489 @@
-{%extends 'layout.html'%}
-{% block content%}
+{%extends 'layout.html'%} {% block content%}
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active navbar-item" aria-current="page" href="#Education">Education</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active navbar-item" aria-current="page" href="#Lecture/Talks">Lecture/Talks</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active navbar-item" aria-current="page" href="#Screenings/Festivals">Screenings/Festivals</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active navbar-item" aria-current="page" href="#Weblinks">Weblinks</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active navbar-item" aria-current="page" href="#Collections ">Collections</a>
+      </li>
 
+    </ul>
+  </div>
+</nav>
 <div class="row border-row">
-    
-      <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="700" class="col-8 border-right  size-center blue">
-        <ul class="cv-list"><li id="" class="cv-section"><span class="title"></span><dl><dt></dt><dd>*19-05-73, Lima/Peru</dd><dd class="separator"></dd></dl></li><li id="Education" class="cv-section"><span class="title">Education</span><dl><dt>2005-2006</dt><dd>Rijksakademie van Beeldende Kunsten, Amsterdam</dd><dd class="separator"></dd><dt>1998-2002</dt><dd>Facultad de Arte de la Universidad Católica, Lima</dd><dd class="separator"></dd><dt>1995-1997</dt><dd>Estudios Generales Letras en la Universidad Católica, Lima</dd><dd class="separator"></dd><dt>1995</dt><dd>Escuela Nacional de Bellas Artes, Lima</dd><dd class="separator"></dd></dl></li><li id="Residencies" class="cv-section"><span class="title">Residencies</span><dl><dt>2013-2014</dt><dd>Research project: Cultural conqueror, Paramaribo-Suriname.</dd><dd class="separator"></dd><dt>2005-2006</dt><dd>Rijksakademie van beeldende Kunsten, Amsterdam, NL</dd><dd class="separator"></dd><dt>2008</dt><dd>European Postgraduate residency, Hoyerswerda, DE</dd><dd class="separator"></dd></dl></li><li id="Grants/Awards" class="cv-section"><span class="title">Grants/Awards</span><dl><dt>2017</dt><dd>First Prize at the IX BCR-National Painting Contest, Lima, PE</dd><dd class="separator"></dd><dt>2016</dt><dd>Arts Council England grant for Languitecture group exhibition, UK</dd><dd class="separator"></dd><dt>2014</dt><dd>Amsterdams Fonds voor de Kunsten, NL</dd><dd class="separator"></dd><dt>2013-2014</dt><dd>Kunsthal Charlottenborg: Spring exhibition- short list, DE</dd><dd class="separator"></dd><dt>2013</dt><dd>Netherlands Fonds voor de Film, NL</dd><dd class="separator"></dd><dt>2010</dt><dd>Netherlands Fonds voor de Film, NL</dd><dd class="separator"></dd><dt>2009</dt><dd>Amsterdams Fonds voor de Kunsten, NL Stimuleringssubsidie, Fonds BKVB, NL</dd><dd class="separator"></dd><dt>2008</dt><dd>Basisstipendium, Fonds BKVB, NL</dd><dd class="separator"></dd><dt>2007</dt><dd>Stimuleringssubsidie, Fonds BKVB, NL</dd><dd class="separator"></dd><dt>2003</dt><dd>Second place at the ‘Young art contest’ in Miraflores, PE</dd><dd class="separator"></dd><dt>2001</dt><dd>Fourth place at the Latin American competition ‘Long-lasting Instants’ organized by Spanish CNN, US</dd><dd class="separator"></dd></dl></li><li id="Solo shows" class="cv-section"><span class="title">Solo shows</span><dl><dt>2016</dt><dd>Cultural Conqueror, Gallery 80m2, Lima, PE</dd><dd>Proyeccionista Itinerante, BIM Buenos Aires, AR</dd><dd class="separator"></dd><dt>2014</dt><dd>Back to the temple of the Sun, Gallery 80m2, Lima, PE.</dd><dd class="separator"></dd><dt>2011</dt><dd>Walks of Desire, Gallery 80m2, Lima, PE</dd><dd class="separator"></dd><dt>2010</dt><dd>Filmmuseum, Amsterdam, NL</dd><dd class="separator"></dd><dt>2008</dt><dd>The End of cinema, De Verschijning, Tilburg, NL</dd><dd class="separator"></dd><dt>2007</dt><dd>“Portable Cinema”, Arto teek, Den Haag, NL</dd><dd class="separator"></dd><dt>2003</dt><dd>Cinema Familiar, Cinematógrafo de Barranco, curated by Miguel Zegarra. PE.</dd><dd class="separator"></dd></dl></li><li id="Group Shows (Selection)" class="cv-section"><span class="title">Group Shows (Selection)</span><dl><dt>2017</dt><dd>Ism, Ism, Ism: Experimental Cinema in Latin America, curated by Antoni Pinent, Los Angeles, USA</dd><dd>Languitecture, Arti et Amicitae, Amsterdam NL</dd><dd>Expectations of the Cinema Space-curated by Leiden University, Eye Film Institute Amsterdam, NL</dd><dd class="separator"></dd><dt>2016</dt><dd>Languitecture, London, UK</dd><dd>Biennale of the Movement Image, Buenos Aires, AR</dd><dd>The migrant Movement Image-curated by Nathanja van Dijk, Eye Film Institute Amsterdam, NL</dd><dd>Parc-Lima, PE</dd><dd class="separator"></dd><dt>2014</dt><dd>Rotterdam Film Festival, Back to the temple of the Sun" 63 min.</dd><dd class="separator"></dd><dt>2013</dt><dd>Die Wasserspeicher Berlin</dd><dd class="separator"></dd><dt>2012</dt><dd>‘Rencontres Internationales’ Berlin/Madrid</dd><dd>Fondazione Cassa di Risparmio di Modena, Modena, IT</dd><dd class="separator"></dd><dt>2011</dt><dd>Kröller-Müller Museum, Otterlo, NL</dd><dd>TIE – The International Experimental Cinema Exposition festival, Milwaukee, USA</dd><dd>‘Arte al paso’, Contemporary Collection of Museo de Arte de Lima - MALI in the Estaçao Pinacoteca Sao Paulo, BR</dd><dd>Trans///fer, Atelier HSL Foundation, Amsterdam, NL</dd><dd>IFFR, Rotterdam, NL</dd><dd class="separator"></dd><dt>2010</dt><dd>‘Villians and heroes’, Arti et Amicitiae, Amsterdam, NL</dd><dd class="separator"></dd><dt>2009</dt><dd>“En Transito al  Paraiso. Imaginarios de la migracion”, Galeria Vertice, Lima, PE</dd><dd class="separator"></dd><dt>2008</dt><dd>“Rijksakademie in the Bank gallery in Durban”, South Africa, ZA</dd><dd class="separator"></dd><dt>2007-08</dt><dd>“Impakt High Lights”, Tour cities-Europe, EU</dd><dd class="separator"></dd><dt>2007</dt><dd>“Drawing Typologies” en el Stedelijk Museum CS, Amsterdam, NL</dd><dd>“Under the skyline”, Galeria Vertice, Lima, PE</dd><dd>Impakt festival, Utrecht, NL</dd><dd class="separator"></dd></dl></li><li id="Bibliography" class="cv-section"><span class="title">Bibliography</span><dl><dt>2016</dt><dd>Arte Peru, MATE, Mario Testino. Lima, PE</dd><dd>José-Carlos Mariátegui: Animación que complementa la realidad, En: Radicalidad de la Imagen, Buenos Aires, AG</dd><dd class="separator"></dd><dt>2015</dt><dd>Satish Naidu: Best of 2014, movie-place.blogspot.de</dd><dd class="separator"></dd><dt>2014</dt><dd>Javier H.Estrada: Caimán Cuadernos de Cine, Madrid</dd><dd class="separator"></dd><dt>2011</dt><dd>Ingrid Commandeur: ‘Nature as a form of Recycling’, Windflower, Perceptions of Nature, Otterlo, NL</dd><dd class="separator"></dd><dt>2010</dt><dd>Pierre Emile Vandoorne: El proyeccionista Itinerante, Lima, PE <a href="https://web.archive.org/web/20180129010000/http://visionesmetaforicas.blogspot.com/2010/08/el-proyeccionista-itinerante.html" target="_blank">http://visionesmetaforicas.blogspot.com/2010/08/el-proyeccionista-itinerante.html</a></dd><dd>Luis Lama: ‘24 imagenes por segundo’, Caretas, PE</dd><dd class="separator"></dd><dt>2009</dt><dd>Elida Roman:  “Autoexilio”, Lima (22.03.09), PE</dd><dd class="separator"></dd><dt>2008</dt><dd>Mirko Kolodziej:   “Der Dia-Projektor lässt Erinnerungen an den WK X auferstehen”, Hoyerswerdaer Tageblatt (25.08.08), DE</dd><dd class="separator"></dd><dt>2007</dt><dd>Sacha Bronwasser: “Film maken met elastiek en plantenspuit”, De Volkskrant (16.03.07), NL</dd><dd>Saskia van kampen: ‘Drawing Typologies’, Stedelijk Museum, NL</dd><dd>Sergio Llerena Caballero: “Paseo por el borde”, El Comercio (25.02.07), Lima, PE</dd><dd class="separator"></dd><dt>2006</dt><dd>Sandra Smallenburg: “TI-buizen, voor 100 euro per stuck”, NRC Handelsblad (24.11.06), NL</dd><dd>Kees Keijer: “Geen grote gebaren en statements bij Open Ateliers”, Het Parool (21.11.06), NL</dd><dd class="separator"></dd><dt>2005</dt><dd>Miguel Zegarra: “La memoria Portátil”, Prótesis, PE</dd><dd class="separator"></dd></dl></li><li id="Lecture/Talks" class="cv-section"><span class="title">Lecture/Talks</span><dl><dt>2014</dt><dd>Lecture about “Back to the temple of the Sun”, Gallery 80m2, Lima, PE</dd><dd>Los secretos de Tintin, Bisagra, PE</dd><dd class="separator"></dd><dt>2011</dt><dd>Kröller-Müller Museum, Otterlo, NL</dd><dd>Museo de Arte de Lima, Lima, PE</dd><dd class="separator"></dd><dt>2010</dt><dd>11.Festival internacional de video/arte/electrónica, Lima, PE</dd><dd class="separator"></dd><dt>2007</dt><dd>Espacio “La culpable”, Lima, PE</dd><dd>www.laculpable.org</dd><dd class="separator"></dd></dl></li><li id="Filmography" class="cv-section"><span class="title">Filmography</span><dl><dt>2014</dt><dd>“Back to the temple of the sun”, 63min,16:9, 16mm film, DCP, NL/PE</dd><dd class="separator"></dd><dt>2009-10</dt><dd>“The Boat”, 4:3, 9min, 16mm film, NL</dd><dd class="separator"></dd><dt>2008</dt><dd>“White Lung City”, 4:3, 4min, 16mm, animation, Stereo NL/PE</dd><dd>“The End of Cinema”, 4:3, 6min, 35mm, animation, NL</dd><dd class="separator"></dd><dt>2006</dt><dd>“The Bug man”, 5.32min, 35mm, animation, Stereo, NL</dd><dd class="separator"></dd><dt>2004-2006</dt><dd>“The king of the mountains”, Beta-Cam, 5’34min, animation, Film-installation, Stereo, NL/PE</dd><dd class="separator"></dd><dt>2005</dt><dd>“Butterfly of the border”, 4:3, 1’48min, 35mm, animation, Stereo, NL</dd><dd class="separator"></dd><dt>2003</dt><dd>“Tourist Hitchcock”, 4:3, 4’80min, 35mm, animation, Stereo, PE</dd><dd class="separator"></dd></dl></li><li id="Screenings/Festivals" class="cv-section"><span class="title">Screenings/Festivals</span><dl><dt>2017</dt><dd>Ism, Ism, Ism: Experimental Cinema in Latin America, curated by Antoni Pinent, Los Angeles, USA</dd><dd>Expectations of the Cinema Space-curated by Leiden University, Eye Film Institute Amsterdam, NL</dd><dd class="separator"></dd><dt>2016</dt><dd>Biennale of the Movement Image, Buenos Aires, AR</dd><dd>The migrant Movement Image-curated by Nathanja van Dijk, Eye Film Institute Amsterdam, NL</dd><dd class="separator"></dd><dt>2014</dt><dd>Rotterdam Film Festival, NL.</dd><dd>Independent International film festival, Lim, PE</dd><dd>Ayacucho film festival, PE</dd><dd class="separator"></dd><dt>2012</dt><dd>Fondazione Cassa di Risparmio di Modena, IT</dd><dd class="separator"></dd><dt>2011</dt><dd>Kröller-Müller Museum (Otterlo), NL</dd><dd>‘Arte al paso’ Contemporary Collection of Museo de Arte de Lima - MALI in the Estaçao Pinacoteca Sao Paulo (Sao Paulo), BR</dd><dd>80m2 gallery, Lima, PE</dd><dd>IFFR, Rotterdam, NL</dd><dd>TIE – The International Experimental Cinema, Milwaukee, USA</dd><dd class="separator"></dd><dt>2010</dt><dd>Filmmuseum, Amsterdam, NL</dd><dd class="separator"></dd><dt>2009</dt><dd>“En Transito al Paraiso. Imaginarios de la migracion”, Galeria Vertice, Lima, PE</dd><dd class="separator"></dd><dt>2008</dt><dd>De Verschijning, Tilburg, NL</dd><dd>“Rijksakademie in the Bank gallery in Durban”, South Africa, ZA</dd><dd class="separator"></dd><dt>2007-08</dt><dd>“Impakt High Lights”, Tour cities-Europe, EU</dd><dd class="separator"></dd><dt>2007</dt><dd>Arto teek, Den Haag, NL</dd><dd>“Drawing Typologies” Stedelijk Museum CS Amsterdam, NL</dd><dd>“Under the skyline”, Galeria Vertice, Lima, PE</dd><dd>Impakt festival, Utrecht, NL</dd><dd class="separator"></dd><dt>2006</dt><dd>“Open Ateliers”, Rijksakademie Van Beeldende Kunsten, Amsterdam, NL</dd><dd>“Rijksakademie at Parts” Parts (Xiamen), CN</dd><dd>“In order of Appearance”, Living Art Museum, Reykjavik, IS</dd><dd class="separator"></dd><dt>2005</dt><dd>“Open Ateliers”, Rijksakademie van Beeldende Kunsten, Amsterdam, NL</dd><dd class="separator"></dd><dt>2003</dt><dd>Cinematógrafo de  Barranco, Lima, PE</dd><dd class="separator"></dd></dl></li><li id="Work Shops" class="cv-section"><span class="title">Work Shops</span><dl><dt>2002</dt><dd>Montage and installation of the works of Pepon Osorio (Puerto Rico) and Francis Alys   (Belgium). II Biennale Lima. PE</dd><dd class="separator"></dd><dt>2001</dt><dd>Installation and Illumination with Daniel Canogar (Spain) Cultural center of Spain, PE</dd><dd class="separator"></dd><dt>2000</dt><dd>Craft and montage with Ana Bustos (Spain) Cultural center of Spain, PE</dd><dd class="separator"></dd><dt>1995</dt><dd>Art assistant of Dr. Grover Mori at the schizophrenic hospital Larco Herrera, Lima</dd><dd class="separator"></dd></dl></li><li id="Weblinks" class="cv-section"><span class="title">Weblinks</span><dl><dt></dt><dd>Eye film Institute Netherlands: https://www.eyefilm.nl</dd><dd>Rijksakademie: http://www.rijksakademie.nl/NL/kunstenaars/alumni?list=P</dd><dd>Rotterdam Film festival: https://iffr.com/en/persons/marco-pando</dd><dd>Festival Scope: https://www.festivalscope.com/director/pando-marco</dd><dd>Kröller Müller Museum: http://krollermuller.nl/de</dd><dd>Museo de arte de Lima: http://www.mali.pe/</dd><dd class="separator"></dd></dl></li><li id="Collections" class="cv-section"><span class="title">Collections</span><dl><dt></dt><dd>Eye film Institute, Amsterdam</dd><dd>Museum of contemporary art, Lima</dd><dd>Egbert and Loes Dommering collection, Amsterdam</dd><dd>Fondazione Cassa di Risparmio, Modena</dd><dd>Private collections in Lima</dd><dd class="separator"></dd></dl></li></ul></div>
-
-      </div>
-
-
-
+  <div
+    data-aos="fade-down"
+    data-aos-easing="linear"
+    data-aos-duration="700"
+    class="col-8 border-right size-center blue"
+  >
+    <ul class="cv-list">
+      <li id="" class="cv-section">
+        <span class="title"></span>
+        <dl>
+          <dd></dd>
+          <dd>*19-05-73, Lima/Peru</dd>
+          <dd class="separator"></dd>
+        </dl>
+      </li>
+      <li id="Education" class="cv-section">
+        <span class="title" style="font-weight: bold;">Education</span>
+        <dl>
+          <dd>2005-2006</dd>
+          <dd>Rijksakademie van Beeldende Kunsten, Amsterdam</dd>
+          <dd class="separator"></dd>
+          <dd>1998-2002</dd>
+          <dd>Facultad de Arte de la Universidad Católica, Lima</dd>
+          <dd class="separator"></dd>
+          <dd>1995-1997</dd>
+          <dd>Estudios Generales Letras en la Universidad Católica, Lima</dd>
+          <dd class="separator"></dd>
+          <dd>1995</dd>
+          <dd>Escuela Nacional de Bellas Artes, Lima</dd>
+          <dd class="separator"></dd>
+        </dl>
+      </li>
+      <li id="Residencies" class="cv-section">
+        <span class="title">Residencies</span>
+        <dl>
+          <dd>2013-2014</dd>
+          <dd>Research project: Cultural conqueror, Paramaribo-Suriname.</dd>
+          <dd class="separator"></dd>
+          <dd>2005-2006</dd>
+          <dd>Rijksakademie van beeldende Kunsten, Amsterdam, NL</dd>
+          <dd class="separator"></dd>
+          <dd>2008</dd>
+          <dd>European Postgraduate residency, Hoyerswerda, DE</dd>
+          <dd class="separator"></dd>
+        </dl>
+      </li>
+      <li id="Grants/Awards" class="cv-section">
+        <span class="title">Grants/Awards</span>
+        <dl>
+          <dd>2017</dd>
+          <dd>First Prize at the IX BCR-National Painting Contest, Lima, PE</dd>
+          <dd class="separator"></dd>
+          <dd>2016</dd>
+          <dd>
+            Arts Council England grant for Languitecture group exhibition, UK
+          </dd>
+          <dd class="separator"></dd>
+          <dd>2014</dd>
+          <dd>Amsterdams Fonds voor de Kunsten, NL</dd>
+          <dd class="separator"></dd>
+          <dd>2013-2014</dd>
+          <dd>Kunsthal Charlottenborg: Spring exhibition- short list, DE</dd>
+          <dd class="separator"></dd>
+          <dd>2013</dd>
+          <dd>Netherlands Fonds voor de Film, NL</dd>
+          <dd class="separator"></dd>
+          <dd>2010</dd>
+          <dd>Netherlands Fonds voor de Film, NL</dd>
+          <dd class="separator"></dd>
+          <dd>2009</dd>
+          <dd>
+            Amsterdams Fonds voor de Kunsten, NL Stimuleringssubsidie, Fonds
+            BKVB, NL
+          </dd>
+          <dd class="separator"></dd>
+          <dd>2008</dd>
+          <dd>Basisstipendium, Fonds BKVB, NL</dd>
+          <dd class="separator"></dd>
+          <dd>2007</dd>
+          <dd>Stimuleringssubsidie, Fonds BKVB, NL</dd>
+          <dd class="separator"></dd>
+          <dd>2003</dd>
+          <dd>Second place at the ‘Young art contest’ in Miraflores, PE</dd>
+          <dd class="separator"></dd>
+          <dd>2001</dd>
+          <dd>
+            Fourth place at the Latin American competition ‘Long-lasting
+            Instants’ organized by Spanish CNN, US
+          </dd>
+          <dd class="separator"></dd>
+        </dl>
+      </li>
+      <li id="Solo shows" class="cv-section">
+        <span class="title">Solo shows</span>
+        <dl>
+          <dd>2016</dd>
+          <dd>Cultural Conqueror, Gallery 80m2, Lima, PE</dd>
+          <dd>Proyeccionista Itinerante, BIM Buenos Aires, AR</dd>
+          <dd class="separator"></dd>
+          <dd>2014</dd>
+          <dd>Back to the temple of the Sun, Gallery 80m2, Lima, PE.</dd>
+          <dd class="separator"></dd>
+          <dd>2011</dd>
+          <dd>Walks of Desire, Gallery 80m2, Lima, PE</dd>
+          <dd class="separator"></dd>
+          <dd>2010</dd>
+          <dd>Filmmuseum, Amsterdam, NL</dd>
+          <dd class="separator"></dd>
+          <dd>2008</dd>
+          <dd>The End of cinema, De Verschijning, Tilburg, NL</dd>
+          <dd class="separator"></dd>
+          <dd>2007</dd>
+          <dd>“Portable Cinema”, Arto teek, Den Haag, NL</dd>
+          <dd class="separator"></dd>
+          <dd>2003</dd>
+          <dd>
+            Cinema Familiar, Cinematógrafo de Barranco, curated by Miguel
+            Zegarra. PE.
+          </dd>
+          <dd class="separator"></dd>
+        </dl>
+      </li>
+      <li id="Group Shows (Selection)" class="cv-section">
+        <span class="title">Group Shows (Selection)</span>
+        <dl>
+          <dd>2017</dd>
+          <dd>
+            Ism, Ism, Ism: Experimental Cinema in Latin America, curated by
+            Antoni Pinent, Los Angeles, USA
+          </dd>
+          <dd>Languitecture, Arti et Amicitae, Amsterdam NL</dd>
+          <dd>
+            Expectations of the Cinema Space-curated by Leiden University, Eye
+            Film Institute Amsterdam, NL
+          </dd>
+          <dd class="separator"></dd>
+          <dd>2016</dd>
+          <dd>Languitecture, London, UK</dd>
+          <dd>Biennale of the Movement Image, Buenos Aires, AR</dd>
+          <dd>
+            The migrant Movement Image-curated by Nathanja van Dijk, Eye Film
+            Institute Amsterdam, NL
+          </dd>
+          <dd>Parc-Lima, PE</dd>
+          <dd class="separator"></dd>
+          <dd>2014</dd>
+          <dd>
+            Rotterdam Film Festival, Back to the temple of the Sun" 63 min.
+          </dd>
+          <dd class="separator"></dd>
+          <dd>2013</dd>
+          <dd>Die Wasserspeicher Berlin</dd>
+          <dd class="separator"></dd>
+          <dd>2012</dd>
+          <dd>‘Rencontres Internationales’ Berlin/Madrid</dd>
+          <dd>Fondazione Cassa di Risparmio di Modena, Modena, IT</dd>
+          <dd class="separator"></dd>
+          <dd>2011</dd>
+          <dd>Kröller-Müller Museum, Otterlo, NL</dd>
+          <dd>
+            TIE – The International Experimental Cinema Exposition festival,
+            Milwaukee, USA
+          </dd>
+          <dd>
+            ‘Arte al paso’, Contemporary Collection of Museo de Arte de Lima -
+            MALI in the Estaçao Pinacoteca Sao Paulo, BR
+          </dd>
+          <dd>Trans///fer, Atelier HSL Foundation, Amsterdam, NL</dd>
+          <dd>IFFR, Rotterdam, NL</dd>
+          <dd class="separator"></dd>
+          <dd>2010</dd>
+          <dd>‘Villians and heroes’, Arti et Amicitiae, Amsterdam, NL</dd>
+          <dd class="separator"></dd>
+          <dd>2009</dd>
+          <dd>
+            “En Transito al Paraiso. Imaginarios de la migracion”, Galeria
+            Vertice, Lima, PE
+          </dd>
+          <dd class="separator"></dd>
+          <dd>2008</dd>
+          <dd>
+            “Rijksakademie in the Bank gallery in Durban”, South Africa, ZA
+          </dd>
+          <dd class="separator"></dd>
+          <dd>2007-08</dd>
+          <dd>“Impakt High Lights”, Tour cities-Europe, EU</dd>
+          <dd class="separator"></dd>
+          <dd>2007</dd>
+          <dd>“Drawing Typologies” en el Stedelijk Museum CS, Amsterdam, NL</dd>
+          <dd>“Under the skyline”, Galeria Vertice, Lima, PE</dd>
+          <dd>Impakt festival, Utrecht, NL</dd>
+          <dd class="separator"></dd>
+        </dl>
+      </li>
+      <li id="Bibliography" class="cv-section">
+        <span class="title">Bibliography</span>
+        <dl>
+          <dd>2016</dd>
+          <dd>Arte Peru, MATE, Mario Testino. Lima, PE</dd>
+          <dd>
+            José-Carlos Mariátegui: Animación que complementa la realidad, En:
+            Radicalidad de la Imagen, Buenos Aires, AG
+          </dd>
+          <dd class="separator"></dd>
+          <dd>2015</dd>
+          <dd>Satish Naidu: Best of 2014, movie-place.blogspot.de</dd>
+          <dd class="separator"></dd>
+          <dd>2014</dd>
+          <dd>Javier H.Estrada: Caimán Cuadernos de Cine, Madrid</dd>
+          <dd class="separator"></dd>
+          <dd>2011</dd>
+          <dd>
+            Ingrid Commandeur: ‘Nature as a form of Recycling’, Windflower,
+            Perceptions of Nature, Otterlo, NL
+          </dd>
+          <dd class="separator"></dd>
+          <dd>2010</dd>
+          <dd>
+            Pierre Emile Vandoorne: El proyeccionista Itinerante, Lima, PE
+            <a
+              href="https://web.archive.org/web/20180129010000/http://visionesmetaforicas.blogspot.com/2010/08/el-proyeccionista-itinerante.html"
+              target="_blank"
+              >http://visionesmetaforicas.blogspot.com/2010/08/el-proyeccionista-itinerante.html</a
+            >
+          </dd>
+          <dd>Luis Lama: ‘24 imagenes por segundo’, Caretas, PE</dd>
+          <dd class="separator"></dd>
+          <dd>2009</dd>
+          <dd>Elida Roman: “Autoexilio”, Lima (22.03.09), PE</dd>
+          <dd class="separator"></dd>
+          <dd>2008</dd>
+          <dd>
+            Mirko Kolodziej: “Der Dia-Projektor lässt Erinnerungen an den WK X
+            auferstehen”, Hoyerswerdaer Tageblatt (25.08.08), DE
+          </dd>
+          <dd class="separator"></dd>
+          <dd>2007</dd>
+          <dd>
+            Sacha Bronwasser: “Film maken met elastiek en plantenspuit”, De
+            Volkskrant (16.03.07), NL
+          </dd>
+          <dd>Saskia van kampen: ‘Drawing Typologies’, Stedelijk Museum, NL</dd>
+          <dd>
+            Sergio Llerena Caballero: “Paseo por el borde”, El Comercio
+            (25.02.07), Lima, PE
+          </dd>
+          <dd class="separator"></dd>
+          <dd>2006</dd>
+          <dd>
+            Sandra Smallenburg: “TI-buizen, voor 100 euro per stuck”, NRC
+            Handelsblad (24.11.06), NL
+          </dd>
+          <dd>
+            Kees Keijer: “Geen grote gebaren en statements bij Open Ateliers”,
+            Het Parool (21.11.06), NL
+          </dd>
+          <dd class="separator"></dd>
+          <dd>2005</dd>
+          <dd>Miguel Zegarra: “La memoria Portátil”, Prótesis, PE</dd>
+          <dd class="separator"></dd>
+        </dl>
+      </li>
+      <li id="Lecture/Talks" class="cv-section">
+        <span class="title" style="font-weight: bold;">Lecture/Talks</span>
+        <dl>
+          <dd>2014</dd>
+          <dd>
+            Lecture about “Back to the temple of the Sun”, Gallery 80m2, Lima,
+            PE
+          </dd>
+          <dd>Los secretos de Tintin, Bisagra, PE</dd>
+          <dd class="separator"></dd>
+          <dd>2011</dd>
+          <dd>Kröller-Müller Museum, Otterlo, NL</dd>
+          <dd>Museo de Arte de Lima, Lima, PE</dd>
+          <dd class="separator"></dd>
+          <dd>2010</dd>
+          <dd>11.Festival internacional de video/arte/electrónica, Lima, PE</dd>
+          <dd class="separator"></dd>
+          <dd>2007</dd>
+          <dd>Espacio “La culpable”, Lima, PE</dd>
+          <dd>www.laculpable.org</dd>
+          <dd class="separator"></dd>
+        </dl>
+      </li>
+      <li id="Filmography" class="cv-section">
+        <span class="title">Filmography</span>
+        <dl>
+          <dd>2014</dd>
+          <dd>
+            “Back to the temple of the sun”, 63min,16:9, 16mm film, DCP, NL/PE
+          </dd>
+          <dd class="separator"></dd>
+          <dd>2009-10</dd>
+          <dd>“The Boat”, 4:3, 9min, 16mm film, NL</dd>
+          <dd class="separator"></dd>
+          <dd>2008</dd>
+          <dd>“White Lung City”, 4:3, 4min, 16mm, animation, Stereo NL/PE</dd>
+          <dd>“The End of Cinema”, 4:3, 6min, 35mm, animation, NL</dd>
+          <dd class="separator"></dd>
+          <dd>2006</dd>
+          <dd>“The Bug man”, 5.32min, 35mm, animation, Stereo, NL</dd>
+          <dd class="separator"></dd>
+          <dd>2004-2006</dd>
+          <dd>
+            “The king of the mountains”, Beta-Cam, 5’34min, animation,
+            Film-installation, Stereo, NL/PE
+          </dd>
+          <dd class="separator"></dd>
+          <dd>2005</dd>
+          <dd>
+            “Butterfly of the border”, 4:3, 1’48min, 35mm, animation, Stereo, NL
+          </dd>
+          <dd class="separator"></dd>
+          <dd>2003</dd>
+          <dd>
+            “Tourist Hitchcock”, 4:3, 4’80min, 35mm, animation, Stereo, PE
+          </dd>
+          <dd class="separator"></dd>
+        </dl>
+      </li>
+      <li id="Screenings/Festivals" class="cv-section">
+        <span class="title" style="font-weight: bold;">Screenings/Festivals</span>
+        <dl>
+          <dd>2017</dd>
+          <dd>
+            Ism, Ism, Ism: Experimental Cinema in Latin America, curated by
+            Antoni Pinent, Los Angeles, USA
+          </dd>
+          <dd>
+            Expectations of the Cinema Space-curated by Leiden University, Eye
+            Film Institute Amsterdam, NL
+          </dd>
+          <dd class="separator"></dd>
+          <dd>2016</dd>
+          <dd>Biennale of the Movement Image, Buenos Aires, AR</dd>
+          <dd>
+            The migrant Movement Image-curated by Nathanja van Dijk, Eye Film
+            Institute Amsterdam, NL
+          </dd>
+          <dd class="separator"></dd>
+          <dd>2014</dd>
+          <dd>Rotterdam Film Festival, NL.</dd>
+          <dd>Independent International film festival, Lim, PE</dd>
+          <dd>Ayacucho film festival, PE</dd>
+          <dd class="separator"></dd>
+          <dd>2012</dd>
+          <dd>Fondazione Cassa di Risparmio di Modena, IT</dd>
+          <dd class="separator"></dd>
+          <dd>2011</dd>
+          <dd>Kröller-Müller Museum (Otterlo), NL</dd>
+          <dd>
+            ‘Arte al paso’ Contemporary Collection of Museo de Arte de Lima -
+            MALI in the Estaçao Pinacoteca Sao Paulo (Sao Paulo), BR
+          </dd>
+          <dd>80m2 gallery, Lima, PE</dd>
+          <dd>IFFR, Rotterdam, NL</dd>
+          <dd>TIE – The International Experimental Cinema, Milwaukee, USA</dd>
+          <dd class="separator"></dd>
+          <dd>2010</dd>
+          <dd>Filmmuseum, Amsterdam, NL</dd>
+          <dd class="separator"></dd>
+          <dd>2009</dd>
+          <dd>
+            “En Transito al Paraiso. Imaginarios de la migracion”, Galeria
+            Vertice, Lima, PE
+          </dd>
+          <dd class="separator"></dd>
+          <dd>2008</dd>
+          <dd>De Verschijning, Tilburg, NL</dd>
+          <dd>
+            “Rijksakademie in the Bank gallery in Durban”, South Africa, ZA
+          </dd>
+          <dd class="separator"></dd>
+          <dd>2007-08</dd>
+          <dd>“Impakt High Lights”, Tour cities-Europe, EU</dd>
+          <dd class="separator"></dd>
+          <dd>2007</dd>
+          <dd>Arto teek, Den Haag, NL</dd>
+          <dd>“Drawing Typologies” Stedelijk Museum CS Amsterdam, NL</dd>
+          <dd>“Under the skyline”, Galeria Vertice, Lima, PE</dd>
+          <dd>Impakt festival, Utrecht, NL</dd>
+          <dd class="separator"></dd>
+          <dd>2006</dd>
+          <dd>
+            “Open Ateliers”, Rijksakademie Van Beeldende Kunsten, Amsterdam, NL
+          </dd>
+          <dd>“Rijksakademie at Parts” Parts (Xiamen), CN</dd>
+          <dd>“In order of Appearance”, Living Art Museum, Reykjavik, IS</dd>
+          <dd class="separator"></dd>
+          <dd>2005</dd>
+          <dd>
+            “Open Ateliers”, Rijksakademie van Beeldende Kunsten, Amsterdam, NL
+          </dd>
+          <dd class="separator"></dd>
+          <dd>2003</dd>
+          <dd>Cinematógrafo de Barranco, Lima, PE</dd>
+          <dd class="separator"></dd>
+        </dl>
+      </li>
+      <li id="Work Shops" class="cv-section">
+        <span class="title">Work Shops</span>
+        <dl>
+          <dd>2002</dd>
+          <dd>
+            Montage and installation of the works of Pepon Osorio (Puerto Rico)
+            and Francis Alys (Belgium). II Biennale Lima. PE
+          </dd>
+          <dd class="separator"></dd>
+          <dd>2001</dd>
+          <dd>
+            Installation and Illumination with Daniel Canogar (Spain) Cultural
+            center of Spain, PE
+          </dd>
+          <dd class="separator"></dd>
+          <dd>2000</dd>
+          <dd>
+            Craft and montage with Ana Bustos (Spain) Cultural center of Spain,
+            PE
+          </dd>
+          <dd class="separator"></dd>
+          <dd>1995</dd>
+          <dd>
+            Art assistant of Dr. Grover Mori at the schizophrenic hospital Larco
+            Herrera, Lima
+          </dd>
+          <dd class="separator"></dd>
+        </dl>
+      </li>
+      <li id="Weblinks" class="cv-section">
+        <span class="title" style="font-weight: bold;">Weblinks</span>
+        <dl>
+          <dd></dd>
+          <dd>Eye film Institute Netherlands: https://www.eyefilm.nl</dd>
+          <dd>
+            Rijksakademie:
+            http://www.rijksakademie.nl/NL/kunstenaars/alumni?list=P
+          </dd>
+          <dd>
+            Rotterdam Film festival: https://iffr.com/en/persons/marco-pando
+          </dd>
+          <dd>
+            Festival Scope: https://www.festivalscope.com/director/pando-marco
+          </dd>
+          <dd>Kröller Müller Museum: http://krollermuller.nl/de</dd>
+          <dd>Museo de arte de Lima: http://www.mali.pe/</dd>
+          <dd class="separator"></dd>
+        </dl>
+      </li>
+      <li id="Collections" class="cv-section">
+        <span class="title" style="font-weight: bold;">Collections</span>
+        <dl>
+          <dd></dd>
+          <dd>Eye film Institute, Amsterdam</dd>
+          <dd>Museum of contemporary art, Lima</dd>
+          <dd>Egbert and Loes Dommering collection, Amsterdam</dd>
+          <dd>Fondazione Cassa di Risparmio, Modena</dd>
+          <dd>Private collections in Lima</dd>
+          <dd class="separator"></dd>
+        </dl>
+      </li>
+    </ul>
+  </div>
+</div>
 {% endblock %}
