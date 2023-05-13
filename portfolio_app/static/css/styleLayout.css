@@ -26,6 +26,17 @@ li {
     color: #1C6181 !important;
     padding-right: 22px !important;
 }
+
+.navbar-item-biography{
+
+  padding-right: 22px !important;
+  font-weight: bold;
+}
+.navbar-item-biography:hover{
+   text-decoration: underline;
+    font-style: italic;
+
+}
     
 .navbar-item:hover {
     text-decoration: underline;

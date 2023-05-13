@@ -1,0 +1,26 @@
+.cv-list{
+    margin-top: 20px;
+}
+.cv-list dt{
+    float: left;
+    width: 6em;
+    text-align: right;
+}
+.cv-list li .title,
+.cv-list dd{
+    margin-left: 7em;
+    margin-bottom: 7px;
+}
+.cv-list dd.separator{
+    height: 0em;
+}
+.cv-list li{
+    margin-bottom: 15px;
+    line-height: 14px;
+    font-size: 12px;
+}
+.cv-list li .title{
+    font-weight: bold;
+    display: inline-block;
+    font-style: italic;
+}
