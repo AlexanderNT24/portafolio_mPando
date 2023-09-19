@@ -29,92 +29,143 @@
     border-radius: 5px;
     background-color: rgb(0, 0, 0);
   }
+  .navbar-exhibition { 
+  position: fixed;
+  top: 100;
+  width: 100%;
+  background-color: #ffffff; 
+}
 </style>
+
 <div class="container">
-  <div class="container-fluid">
-    <p class="description-post-tag">
-      <strong>
-        {{exhibition.title}}.
-        {% if exhibition.ubication %}
-        {{exhibition.ubication}},
-        {% endif %}
-        {% if exhibition.city %}
-        {{exhibition.city}}
-        {% endif %}
-      </strong>
-      ({{exhibition.date|date:'Y'}})
-    </p>
-  </div>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <header class="navbar-exhibition">
     <div class="container-fluid">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active navbar-item" aria-current="page" href="#Description">Text</a>
-        </li>
-        {% if exhibition.exhibition_view_set.all %}
-        <li class="nav-item">
-          <a class="nav-link navbar-item" href="#Images">Exhibition Views</a>
-        </li>
-        {% endif %}
-        {% if exhibition.video_url %}
-        <li class="nav-item">
-          <a class="nav-link active navbar-item" href="#Video">Video</a>
-        </li>
-        {% endif %}
-      </ul>
+      <p class="description-post-tag">
+        <strong>
+          {{exhibition.title}}.
+          {% if exhibition.ubication %}
+          {{exhibition.ubication}},
+          {% endif %}
+          {% if exhibition.city %}
+          {{exhibition.city}}
+          {% endif %}
+        </strong>
+        ({{exhibition.date|date:'Y'}})
+      </p>
     </div>
-  </nav>
-  <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="700" id="Description"
-    style="padding: 14px; background-color: white;">
-    <textarea style="height:300px; width: 600px;background-color: white; resize: none; border: none;" disabled>
-      {{exhibition.description}}
-    </textarea>
-  </div>
-  {% if exhibition.exhibition_view_set.all %}
-  <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="700" id="carouselExampleIndicators" class="carousel slide">
-    <div class="carousel-indicators">
-      {% for exhibition_view in exhibition.exhibition_view_set.all %}
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ forloop.counter0 }}"
-        {% if forloop.first %}class="active"{% endif %}></button>
-      {% endfor %}
+    <div class="navbar-exhibition">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <ul class="navbar-nav">
+            {% if exhibition.exhibition_view_set.all %}
+            <li class="nav-item">
+              <a class="nav-link navbar-item" href="#Images">Works</a>
+            </li>
+            {% endif %}
+            {% if exhibition.video_url %}
+            <li class="nav-item">
+              <a class="nav-link active navbar-item" href="#Video">Video</a>
+            </li>
+            {% endif %}
+            <li class="nav-item">
+              <a class="nav-link active navbar-item" aria-current="page" href="#Description">Text</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </div>
-    <div class="carousel-inner">
-      {% for exhibition_view in exhibition.exhibition_view_set.all %}
-      <div class="carousel-item {% if forloop.first %}active{% endif %}">
-        <a class="gallery-image" rel="gallery" href="{{exhibition_view.image.url}}">
-          <img src="{{exhibition_view.image.url}}" class="img-thumbnail" alt="Exhibition">
-        </a>
+  </header>
+
+  <div class="container-fluid" style="padding-top: 75px;">
+    {% if exhibition.exhibition_view_set.all %}
+    <section class="jumbotron text-center vh-100" id="Images">
+          <div style="text-align: left;">
+            <p class="description-post-tag">
+                <strong>
+                    Works
+                </strong>
+            </p>
+            <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="700" id="carouselExampleIndicators" class="carousel slide">
+              <div class="carousel-indicators">
+                {% for exhibition_view in exhibition.exhibition_view_set.all %}
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ forloop.counter0 }}"
+                  {% if forloop.first %}class="active"{% endif %}></button>
+                {% endfor %}
+              </div>
+              <div class="carousel-inner">
+                {% for exhibition_view in exhibition.exhibition_view_set.all %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                  <a class="gallery-image" rel="gallery" href="{{exhibition_view.image.url}}">
+                    <img src="{{exhibition_view.image.url}}" class="img-thumbnail" alt="Exhibition">
+                  </a>
+                </div>
+                {% endfor %}
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+            
+        </div>
+    </section>
+    <hr>
+    {% endif %}
+    {% if exhibition.video_url %}
+    <section class="jumbotron text-center vh-100">  
+        <div style="text-align: left;">
+          <p class="description-post-tag">
+              <strong>
+                  Video
+              </strong>
+          </p>
+          
+          {% if exhibition.password %}
+          <p>Contraseña: {{exhibition.password}}</p>
+          {% endif %}
+        
+          <div id="Video" style="padding:75% 0 0 0;position:relative;">
+            <iframe src="{{exhibition.video_url}}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="{{exhibition.title}}">
+            </iframe>
+            <div class="overlay">
+              <a class="fancyMedia" data-fancybox-type="iframe" href="{{exhibition.video_url}}"><i style="font-weight:bold ;"
+                  class="iconFancy bi bi-fullscreen"></i></a>
+            </div>
+          </div>
+
+        
       </div>
-      {% endfor %}
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-      data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-      data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-  {% endif %}
-  {% if exhibition.video_url %}
-  {% if exhibition.password %}
-  <p>Contraseña: {{exhibition.password}}</p>
-  {% endif %}
+    </section>
+    <hr>
+    {% endif %}
+    <section class="jumbotron text-center vh-100">
+      <div style="text-align: left;">
+          <p class="description-post-tag">
+              <strong>
+                  Text
+              </strong>
+          </p>
+      </div>
+      <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="700" id="Description"
+          style="padding: 14px; background-color: white;">
+          <textarea style="height:300px; width: 600px; background-color: white; resize: none; border: none;" disabled>
+              {{exhibition.description}}
+          </textarea>
+      </div>
+  </section>
+  
+</div>
 
-  <div id="Video" style="padding:75% 0 0 0;position:relative;">
-    <iframe src="{{exhibition.video_url}}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"
-      allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="{{exhibition.title}}">
-    </iframe>
-    <div class="overlay">
-      <a class="fancyMedia" data-fancybox-type="iframe" href="{{exhibition.video_url}}"><i style="font-weight:bold ;"
-          class="iconFancy bi bi-fullscreen"></i></a>
-    </div>
-  </div>
 
-  </a>
-  {% endif %}
+
+
+
 </div>
 {% endblock %}

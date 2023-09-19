@@ -24,13 +24,13 @@ li {
     width: 100%;
     background-color: #ffffff; 
     z-index: 1000;
-    
 }
+
 
 .body-propio{
   font-family: Courier New,Courier,monospace;
   font-size: 14px;
-  padding-top: 8%;
+  padding-top: 50px;
 }
 
 .navbar-item{
