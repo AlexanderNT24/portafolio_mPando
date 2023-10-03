@@ -2,7 +2,7 @@ from django.shortcuts import render,get_object_or_404
 from .models import Exhibition
 
 def home(request):
-    exhibitions = Exhibition.objects.filter(hidden=False)
+    exhibitions = Exhibition.objects.filter(hidden=False).order_by('-date')
     context = {'exhibitions': exhibitions}
     return render(request, 'home.html', context)
 
