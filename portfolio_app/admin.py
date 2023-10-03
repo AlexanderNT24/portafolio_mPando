@@ -4,7 +4,7 @@ from .models import Exhibition, Exhibition_View
 
 class ExhibitionViewInline(admin.TabularInline):
     model = Exhibition_View
-    fields = ('title', 'description', 'display_image')
+    fields = ('order', 'title', 'description', 'display_image')
     extra = 0
     readonly_fields = ('display_image',)
 
