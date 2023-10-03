@@ -2,6 +2,12 @@
 {% block content%}
 <script src="/static/js/fancybox.js"></script>
 <style>
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    color: black !important;
+}
+
   .overlay {
     position: absolute;
     top: 20%;
@@ -86,12 +92,6 @@
                 </strong>
             </p>
             <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="700" id="carouselExampleIndicators" class="carousel slide">
-              <div class="carousel-indicators">
-                {% for exhibition_view in exhibition.exhibition_view_set.all %}
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ forloop.counter0 }}"
-                  {% if forloop.first %}class="active"{% endif %}></button>
-                {% endfor %}
-              </div>
               <div class="carousel-inner">
                 {% for exhibition_view in exhibition.exhibition_view_set.all %}
                 <div class="carousel-item {% if forloop.first %}active{% endif %}">
@@ -102,16 +102,18 @@
                 {% endfor %}
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+              
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
             </div>
+
             
         </div>
     </section>
