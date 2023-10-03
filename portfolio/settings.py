@@ -31,7 +31,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['176.126.87.42', 'marcopando.com', '*.marcopando.com', 'www.marcopando.com', 'localhost']
 
-CSRF_TRUSTED_ORIGINS = ['https://www.marcopando.com']
+CSRF_TRUSTED_ORIGINS = ['https://www.marcopando.com/']
 
 # Application definition
 
