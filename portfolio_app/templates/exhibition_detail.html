@@ -1,12 +1,10 @@
-{%extends 'layout.html'%}
-{% block content%}
+{%extends 'layout.html'%} {% block content%}
 <script src="/static/js/fancybox.js"></script>
 <style>
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
     color: black !important;
-}
+  }
 
   .overlay {
     position: absolute;
@@ -16,8 +14,8 @@
     z-index: 1;
   }
 
-  .fancybox-skin{
-    padding: 0px !important; 
+  .fancybox-skin {
+    padding: 0px !important;
   }
 
   .fancyMedia:hover {
@@ -35,12 +33,12 @@
     border-radius: 5px;
     background-color: rgb(0, 0, 0);
   }
-  .navbar-exhibition { 
-  position: fixed;
-  top: 100;
-  width: 100%;
-  background-color: #ffffff; 
-}
+  .navbar-exhibition {
+    position: fixed;
+    top: 100;
+    width: 100%;
+    background-color: #ffffff;
+  }
 </style>
 
 <div class="container">
@@ -48,13 +46,9 @@
     <div class="container-fluid">
       <p class="description-post-tag">
         <strong>
-          {{exhibition.title}}.
-          {% if exhibition.ubication %}
-          {{exhibition.ubication}},
-          {% endif %}
-          {% if exhibition.city %}
-          {{exhibition.city}}
-          {% endif %}
+          {{exhibition.title}}. {% if exhibition.ubication %}
+          {{exhibition.ubication}}, {% endif %} {% if exhibition.city %}
+          {{exhibition.city}} {% endif %}
         </strong>
         ({{exhibition.date|date:'Y'}})
       </p>
@@ -67,14 +61,18 @@
             <li class="nav-item">
               <a class="nav-link navbar-item" href="#Images">Works</a>
             </li>
-            {% endif %}
-            {% if exhibition.video_url %}
+            {% endif %} {% if exhibition.video_url %}
             <li class="nav-item">
               <a class="nav-link active navbar-item" href="#Video">Video</a>
             </li>
             {% endif %}
             <li class="nav-item">
-              <a class="nav-link active navbar-item" aria-current="page" href="#Description">Text</a>
+              <a
+                class="nav-link active navbar-item"
+                aria-current="page"
+                href="#Description"
+                >Text</a
+              >
             </li>
           </ul>
         </div>
@@ -82,92 +80,130 @@
     </div>
   </header>
 
-  <div class="container-fluid" style="padding-top: 75px;">
+  <div class="container-fluid" style="padding-top: 75px">
     {% if exhibition.exhibition_view_set.all %}
     <section class="jumbotron text-center vh-100" id="Images">
-          <div style="text-align: left;">
-            <p class="description-post-tag">
-                <strong>
-                    Works
-                </strong>
-            </p>
-            <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="700" id="carouselExampleIndicators" class="carousel slide">
-              <div class="carousel-inner">
-                {% for exhibition_view in exhibition.exhibition_view_set.all %}
-                <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                  <a class="gallery-image" rel="gallery" href="{{exhibition_view.image.url}}">
-                    <img src="{{exhibition_view.image.url}}" class="img-thumbnail" alt="Exhibition">
-                  </a>
-                </div>
-                {% endfor %}
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-              data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-              
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-              data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+      <div style="text-align: left">
+        <p class="description-post-tag">
+          <strong> Works </strong>
+        </p>
+        <div
+          data-aos="fade-down"
+          data-aos-easing="linear"
+          data-aos-duration="700"
+          id="carouselExampleIndicators"
+          class="carousel slide"
+        >
+          <div class="carousel-inner">
+            {% for exhibition_view in exhibition.exhibition_view_set.all %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+              <a
+                class="gallery-image"
+                rel="gallery"
+                href="{{exhibition_view.image.url}}"
+              >
+                <img
+                  src="{{exhibition_view.image.url}}"
+                  class="img-thumbnail"
+                  alt="Exhibition"
+                />
+              </a>
             </div>
-
-            
-        </div>
-    </section>
-    <hr>
-    {% endif %}
-    {% if exhibition.video_url %}
-    <section class="jumbotron text-center vh-100">  
-        <div style="text-align: left;">
-          <p class="description-post-tag">
-              <strong>
-                  Video
-              </strong>
-          </p>
-          
-          {% if exhibition.password %}
-          <p>Contraseña: {{exhibition.password}}</p>
-          {% endif %}
-        
-          <div id="Video" style="padding:75% 0 0 0;position:relative;">
-            <iframe src="{{exhibition.video_url}}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"
-              allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="{{exhibition.title}}">
-            </iframe>
-            <div class="overlay">
-              <a class="fancyMedia" data-fancybox-type="iframe" href="{{exhibition.video_url}}"><i style="font-weight:bold ;"
-                  class="iconFancy bi bi-fullscreen"></i></a>
-            </div>
+            {% endfor %}
           </div>
-
-        
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
       </div>
     </section>
-    <hr>
+    <hr />
+    {% endif %} {% if exhibition.video_url %}
+    <section class="jumbotron text-center vh-100">
+      <div style="text-align: left">
+        <p class="description-post-tag">
+          <strong> Video </strong>
+        </p>
+
+        {% if exhibition.password %}
+        <p>Contraseña: {{exhibition.password}}</p>
+        {% endif %}
+
+        <div id="Video" style="padding: 75% 0 0 0; position: relative">
+          <iframe
+            src="{{exhibition.video_url}}"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+            style="
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            "
+            title="{{exhibition.title}}"
+          >
+          </iframe>
+          <div class="overlay">
+            <a
+              class="fancyMedia"
+              data-fancybox-type="iframe"
+              href="{{exhibition.video_url}}"
+              ><i
+                style="font-weight: bold"
+                class="iconFancy bi bi-fullscreen"
+              ></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr />
     {% endif %}
     <section class="jumbotron text-center vh-100">
-      <div style="text-align: left;">
-          <p class="description-post-tag">
-              <strong>
-                  Text
-              </strong>
-          </p>
+      <div style="text-align: left">
+        <p class="description-post-tag">
+          <strong> Text </strong>
+        </p>
       </div>
-      <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="700" id="Description"
-          style="padding: 14px; background-color: white;">
-          <textarea style="height:300px; width: 600px; background-color: white; resize: none; border: none;" disabled>
+      <div
+        data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="700"
+        id="Description"
+        style="padding: 14px; background-color: white"
+      >
+        <textarea
+          style="
+            height: 300px;
+            width: 600px;
+            background-color: white;
+            resize: none;
+            border: none;
+          "
+          disabled
+        >
               {{exhibition.description}}
-          </textarea>
+          </textarea
+        >
       </div>
-  </section>
-  
-</div>
-
-
-
-
-
+    </section>
+  </div>
 </div>
 {% endblock %}
