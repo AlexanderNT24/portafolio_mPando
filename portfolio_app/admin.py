@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe  # Importa mark_safe
-from .models import Exhibition, Exhibition_View
+from .models import Exhibition, Exhibition_View,BiographyType,Biography
 
 class ExhibitionViewInline(admin.TabularInline):
     model = Exhibition_View
@@ -16,9 +16,32 @@ class ExhibitionViewInline(admin.TabularInline):
 
     display_image.short_description = 'Image'
 
+class BiographyInline(admin.TabularInline):
+    model = Biography
+    fields = ('date', 'description', 'type')  # Add 'type' field to display BiographyType
+    extra = 0
+
+    def get_type_name(self, obj):
+        return obj.type.name
+
+    readonly_fields = ('get_type_name',)  # Make 'get_type_name' readonly
+
+    def get_type_name(self, obj):
+        return obj.type.name
+
+    get_type_name.short_description = 'Biography Type'
+ 
 class ExhibitionAdmin(admin.ModelAdmin):
     inlines = [ExhibitionViewInline]
     list_display = ('title',)
 
+class BiographyAdmin(admin.ModelAdmin):
+    inlines = [BiographyInline]
+    list_display = ('description',)
+
+class BiographyTypeAdmin(admin.ModelAdmin):
+    list_display = ('name',)
+
+# Registra los modelos en el admin
 admin.site.register(Exhibition, ExhibitionAdmin)
 admin.site.register(Exhibition_View)
