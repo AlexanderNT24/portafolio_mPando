@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['176.126.87.42', 'marcopando.com', '*.marcopando.com', 'www.mar
 
 CSRF_TRUSTED_ORIGINS = ['https://www.marcopando.com/']
 
+
 # Application definition
 
 INSTALLED_APPS = [
