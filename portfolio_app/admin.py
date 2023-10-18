@@ -4,10 +4,9 @@ from .models import Exhibition, Exhibition_View,BiographyType,Biography
 
 class ExhibitionViewInline(admin.TabularInline):
     model = Exhibition_View
-    fields = ('order', 'title', 'description', 'display_image')
+    fields = ('order', 'title', 'description', 'image','display_image')
     extra = 0
     readonly_fields = ('display_image',)
-
     def display_image(self, obj):
         if obj.image:
             return mark_safe(f'<img src="{obj.image.url}" width="100" height="100" />')
@@ -15,6 +14,7 @@ class ExhibitionViewInline(admin.TabularInline):
             return 'No image'
 
     display_image.short_description = 'Image'
+
 
 class BiographyInline(admin.TabularInline):
     model = Biography

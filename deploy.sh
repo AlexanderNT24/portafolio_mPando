@@ -1,5 +1,4 @@
 #!/bin/bash
-git pull
 # Detener y eliminar el contenedor existente
 docker stop mpando_portfolio
 docker rm mpando_portfolio
