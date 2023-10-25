@@ -25,6 +25,7 @@ class BiographyType(models.Model):
     name = models.CharField(max_length=100)
 
 class Biography(models.Model):
-    biography_type = models.ForeignKey(BiographyType, on_delete=models.CASCADE)  
+    biography_type = models.ForeignKey(BiographyType, on_delete=models.CASCADE)
     date = models.DateField()
     description = models.TextField(max_length=10000)
+    related_biography = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True)

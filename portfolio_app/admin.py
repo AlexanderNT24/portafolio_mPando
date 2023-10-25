@@ -18,18 +18,16 @@ class ExhibitionViewInline(admin.TabularInline):
 
 class BiographyInline(admin.TabularInline):
     model = Biography
-    fields = ('date', 'description', 'type')  # Add 'type' field to display BiographyType
+    fields = ('date', 'description', 'biography_type')  # Use 'biography_type' field to display BiographyType
     extra = 0
 
-    def get_type_name(self, obj):
-        return obj.type.name
-
-    readonly_fields = ('get_type_name',)  # Make 'get_type_name' readonly
+    readonly_fields = ('biography_type',)  # Make 'biography_type' readonly
 
     def get_type_name(self, obj):
-        return obj.type.name
+        return obj.biography_type.name
 
     get_type_name.short_description = 'Biography Type'
+
  
 class ExhibitionAdmin(admin.ModelAdmin):
     inlines = [ExhibitionViewInline]
@@ -45,3 +43,5 @@ class BiographyTypeAdmin(admin.ModelAdmin):
 # Registra los modelos en el admin
 admin.site.register(Exhibition, ExhibitionAdmin)
 admin.site.register(Exhibition_View)
+admin.site.register(Biography, BiographyAdmin)
+admin.site.register(BiographyType, BiographyTypeAdmin)
