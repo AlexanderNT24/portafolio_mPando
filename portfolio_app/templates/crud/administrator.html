@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="container">
+  <h1>Lista de Obras</h1>
+  <input type="text" id="search-input" placeholder="Buscar...">
+  <table class="table table-striped" id="exhibitions-table">
+    <thead>
+      <tr>
+        <th data-order="asc" data-column="0">Título</th>
+        <th data-order="asc" data-column="1">Ubicación</th>
+        <th data-order="asc" data-column="2">Ciudad</th>
+        <th data-order="asc" data-column="3">Fecha</th>
+        <th data-order="asc" data-column="4">Descripción</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for exhibition in exhibitions %}
+      <tr>
+        <td>{{ exhibition.title }}</td>
+        <td>{{ exhibition.ubication }}</td>
+        <td>{{ exhibition.city }}</td>
+        <td>{{ exhibition.date }}</td>
+        <td>{{ exhibition.description }}</td>
+        <td>
+          <a href="{% url 'administrator_detail' exhibition.id %}" class="btn"> 
+            <i class="far fa-edit"></i> 
+          </a>
+          <a href="{% url 'administrator_delete' exhibition.id %}" class="btn">
+            <i class="far fa-trash-alt"></i> 
+          </a>
+        </td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="6">No hay obras disponibles.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<!-- Agrega enlaces a los archivos de Axios -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.10/css/jquery.dataTables.min.css"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var table = document.getElementById("exhibitions-table");
+
+    var searchInput = document.getElementById("search-input");
+
+    searchInput.addEventListener("input", function() {
+      var searchText = this.value.toLowerCase();
+      var rows = table.querySelectorAll("tbody tr");
+
+      rows.forEach(function(row) {
+        var columns = row.getElementsByTagName("td");
+        var visible = false;
+
+        for (var i = 0; i < columns.length; i++) {
+          var columnText = columns[i].textContent.toLowerCase();
+          if (columnText.includes(searchText)) {
+            visible = true;
+            break;
+          }
+        }
+
+        row.style.display = visible ? "" : "none";
+      });
+    });
+  });
+</script>
+{% endblock %}

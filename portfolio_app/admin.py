@@ -45,3 +45,4 @@ class BiographyTypeAdmin(admin.ModelAdmin):
 # Registra los modelos en el admin
 admin.site.register(Exhibition, ExhibitionAdmin)
 admin.site.register(Exhibition_View)
+#admin.site.register(Biography,BiographyTypeAdmin)

@@ -7,4 +7,5 @@ app_name='exhibition'
 #cuando /posts/ es la ruta inicial
 urlpatterns = [
     path('<int:exhibition_id>',exhibition_detail,name='exhibition_detail'),
+    
 ]

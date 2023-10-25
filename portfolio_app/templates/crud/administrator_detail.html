@@ -1,0 +1,163 @@
+{% extends 'layout.html' %} {% block content %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+
+<div class="container">
+  <h1>Detalles de la Exposición</h1>
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <th>Título:</th>
+        <td ondblclick="makeEditable(this)">{{ exhibition.title }}</td>
+      </tr>
+      <tr>
+        <th>Ubicación:</th>
+        <td ondblclick="makeEditable(this)">{{ exhibition.ubication }}</td>
+      </tr>
+      <tr>
+        <th>Ubicación:</th>
+        <td ondblclick="makeEditable(this)">{{ exhibition.ubication }}</td>
+      </tr>
+      <tr>
+        <th>Ciudad:</th>
+        <td ondblclick="makeEditable(this)">{{ exhibition.city }}</td>
+      </tr>
+      <tr>
+        <th>Fecha:</th>
+        <td ondblclick="makeEditable(this)">{{ exhibition.date }}</td>
+      </tr>
+      <tr>
+        <th>Descripción:</th>
+        <td ondblclick="makeEditable(this)">{{ exhibition.description }}</td>
+      </tr>
+      <!-- Puedes agregar más campos aquí -->
+      <tr>
+        <th>Imágenes:</th>
+        <td>
+          <ul id="sortable">
+            {% for image in exhibition.exhibition_view_set.all %}
+              <li data-order="{{ image.order }}">
+                <div class="drag-handle">
+                  <i class="fas fa-bars"></i> <!-- Icono de tres rayas para arrastrar -->
+                </div>
+                <img src="{{ image.image.url }}" alt="{{ image.title }}" width="150">
+              </li>
+            {% endfor %}
+          </ul>
+        </td>
+      </tr>
+      
+
+      <tr>
+        <th>URL de Video:</th>
+        <td ondblclick="makeEditable(this)">{{ exhibition.video_url }}</td>
+      </tr>
+      <tr>
+        <th>Contraseña:</th>
+        <td ondblclick="makeEditable(this)">{{ exhibition.password }}</td>
+      </tr>
+      <tr>
+        <th>Oculto:</th>
+        <td>
+          <select id="hiddenSelect">
+            <option value="true" {% if exhibition.hidden %} selected {% endif %}>Oculto</option>
+            <option value="false" {% if not exhibition.hidden %} selected {% endif %}>No oculto</option>
+          </select>
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+  <!-- Botón para editar -->
+  <a
+    href="{% url 'administrator_detail' exhibition.id %}"
+    class="btn btn-primary"
+    >Editar</a
+  >
+
+  <!-- Botón para eliminar (con modal de confirmación) -->
+  <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
+    Eliminar
+  </button>
+
+  <!-- Modal de confirmación para eliminar -->
+  <div
+    class="modal fade"
+    id="deleteModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="deleteModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">
+            Confirmar Eliminación
+          </h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ¿Estás seguro de que deseas eliminar esta exposición?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Cancelar
+          </button>
+          <a
+            href="{% url 'administrator_delete' exhibition.id %}"
+            class="btn btn-danger"
+            >Eliminar</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Estilo para los campos de entrada */
+  textarea {
+    width: 100%; /* El ancho del textarea será igual al de la celda */
+    height: 100%; /* La altura del textarea será igual al de la celda */
+    resize: none; /* Evita que el usuario pueda redimensionar el textarea */
+  }
+</style>
+
+<script>
+  function makeEditable(cell) {
+    const oldValue = cell.textContent;
+    const textarea = document.createElement("textarea");
+    textarea.value = oldValue;
+
+    // Añade el campo de entrada
+    textarea.addEventListener("blur", () => {
+      cell.textContent = textarea.value;
+    });
+
+    // Establece el ancho y la altura del textarea para que coincidan con la celda
+    textarea.style.width = cell.clientWidth + "px";
+    textarea.style.height = cell.clientHeight + "px";
+
+    cell.textContent = "";
+    cell.appendChild(textarea);
+
+    textarea.focus();
+  }
+</script>
+<script>
+  function editHidden() {
+    const hiddenCheckbox = document.getElementById("hiddenCheckbox");
+    hiddenCheckbox.removeAttribute("disabled");
+  }
+</script>
+
+
+{% endblock %}
