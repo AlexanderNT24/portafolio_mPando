@@ -21,11 +21,18 @@ class Exhibition_View(models.Model):
     class Meta:
         ordering = ['order']
 
-class BiographyType(models.Model):
-    name = models.CharField(max_length=100)
-
 class Biography(models.Model):
-    biography_type = models.ForeignKey(BiographyType, on_delete=models.CASCADE)
-    date = models.DateField()
+    title = models.CharField(max_length=100, default="Biography")
+
+
+class Biography_Content(models.Model):
+    biography = models.ForeignKey(Biography, on_delete=models.CASCADE)
+    start_date = models.DateField()
+    end_date = models.DateField()
+    url = models.URLField(blank=True, null=True)
     description = models.TextField(max_length=10000)
-    related_biography = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True)
+
+    class Meta:
+        ordering = ['start_date']
+
+
