@@ -18,20 +18,19 @@ def contact(request):
     return render(request,'contact.html')
 
 def biography(request):
-    biography_contents = Biography_Content.objects.all().order_by('start_date')
+    biography_contents = Biography_Content.objects.all().order_by('biography__title')
     
-    current_title = None
-    grouped_contents = []
-
+    grouped_contents = {}
+    
     for content in biography_contents:
-        if content.biography.title != current_title:
-            current_title = content.biography.title
-            grouped_contents.append({'title': current_title, 'items': [content]})
-        else:
-            grouped_contents[-1]['items'].append(content)
+        title = content.biography.title
+        if title not in grouped_contents:
+            grouped_contents[title] = {'title': title, 'contents': []}
+        grouped_contents[title]['contents'].append(content)
 
-    context = {'grouped_biography_contents': grouped_contents}
+    context = {'grouped_biography_contents': grouped_contents.values()}
     return render(request, 'biography.html', context)
+
 
 def error_404(request, exception):
     return render(request, '404.html', {})

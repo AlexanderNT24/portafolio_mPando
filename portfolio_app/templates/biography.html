@@ -21,7 +21,7 @@
         <li id="{{ group.title }}" class="cv-section">
             <span class="title">{{ group.title }}</span>
             <dl>
-                {% for content in group.items %}
+                {% for content in group.contents %}
                 <dt>
                     {% if content.start_date and content.end_date %}
                         {{ content.start_date|date:"Y" }}-{{ content.end_date|date:"Y" }}
@@ -43,7 +43,5 @@
         </li>
     {% endfor %}
 </ul>
-
-
 </div>
 {% endblock %}
