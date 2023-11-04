@@ -27,8 +27,8 @@ class Biography(models.Model):
 
 class Biography_Content(models.Model):
     biography = models.ForeignKey(Biography, on_delete=models.CASCADE)
-    start_date = models.DateField()
-    end_date = models.DateField()
+    start_date = models.DateField(blank=True, null=True)
+    end_date = models.DateField(blank=True, null=True)
     url = models.URLField(blank=True, null=True)
     description = models.TextField(max_length=10000)
 
