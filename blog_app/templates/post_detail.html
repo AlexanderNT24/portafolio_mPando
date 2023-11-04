@@ -6,13 +6,13 @@
             <p class="description-post-tag" style="padding-top: 20px !important;">
                 <strong>{{post.title}}</strong>
                 {% if post.start_date %}
-                    ({{post.start_date|date:'Y'}}
+                    ({{post.start_date|date:'Y'}})
                 {% endif %}
                 {% if post.end_date %}
                     -{{post.end_date|date:'Y'}}
-                {% endif %})
+                {% endif %}
             </p>
-            <img class="img-fluid" src="{{post.image.url}}" alt="{{post.title}">
+            <img class="img-fluid" src="{{post.image.url}}" alt="{{post.title}}" style="max-height: 500px;">
             <div style="height: 20px;"></div>
             <p class="text-left">{{post.description}}</p>
         </div>
