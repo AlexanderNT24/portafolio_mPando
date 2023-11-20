@@ -1,5 +1,9 @@
 {% extends 'layout.html' %}
 {% block content %}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-rJSvKwONyyTi4gZGp0O7rckG9g4pgZ1f4r7Yfl" crossorigin="anonymous">
+
 <div class="container text-center">
     <div class="row">
         <div class="col-md-8 offset-md-2">
@@ -12,10 +16,132 @@
                     -{{post.end_date|date:'Y'}}
                 {% endif %}
             </p>
+            {% if post.pdf_file %}
+            <div style="position: fixed; bottom: 20px; right: 20px; z-index: 999;">
+                <a href="#" class="pdf-download" onclick="togglePDFViewer()"><span>Descargar</span><span>PDF</span></a>
+            </div>
+            
+            <div id="pdf-viewer" style="display: none;">
+                <iframe src="{{post.pdf_file.url}}" style="width: 100%; height: 80vh;" allowfullscreen></iframe>
+            </div>
+            {% endif %}
             <img class="img-fluid" src="{{post.image.url}}" alt="{{post.title}}" style="max-height: 500px;">
             <div style="height: 20px;"></div>
             <p class="text-left">{{post.description}}</p>
+
         </div>
     </div>
 </div>
+
+<!-- Modal -->
+{% if post.pdf_file %}
+<div class="modal fade" id="pdfModal" tabindex="-1" role="dialog" aria-labelledby="pdfModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="pdfModalLabel">{{post.title}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <iframe src="{{post.pdf_file.url}}" style="width: 100%; height: 70vh;" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<script>
+    function togglePDFViewer() {
+        $('#pdfModal').modal('toggle');
+    }
+</script>
+
+<style>
+
+
+    .pdf-download {
+		background: #ffffff;
+		border: solid 1px #e6e6e6;
+		border-radius: 2px;
+		display: inline-block;
+		height: 100px;
+		line-height: 100px;
+		margin: 5px;
+		position: relative;
+		text-align: center;
+		vertical-align: middle;
+		width: 100px;
+}
+
+.pdf-download span {
+		background: #f2594b;
+		border-radius: 4px;
+		color: #ffffff;
+		display: inline-block;
+		font-size: 11px;
+		font-weight: 700;
+		line-height: normal;
+		padding: 5px 10px;
+		position: relative;
+		text-transform: uppercase;
+		z-index: 1;
+}
+
+.pdf-download span:last-child {
+		margin-left: -20px;
+}
+
+.pdf-download:before,
+.pdf-download:after {
+		background: #ffffff;
+		border: solid 3px #9fb4cc;
+		border-radius: 4px;
+		content: '';
+		display: block;
+		height: 35px;
+		left: 50%;
+		margin: -17px 0 0 -12px;
+		position: absolute;
+		top: 50%;
+		/*transform:translate(-50%,-50%);*/
+		
+		width: 25px;
+}
+
+.pdf-download:hover:before,
+.pdf-download:hover:after {
+		background: #e2e8f0;
+}
+
+
+.pdf-download:before {
+		margin: -23px 0 0 -5px;
+}
+
+.pdf-download:hover {
+		background: #e2e8f0;
+		border-color: #9fb4cc;
+}
+
+.pdf-download:active {
+		background: #dae0e8;
+		box-shadow: inset 0 2px 2px rgba(0, 0, 0, .25);
+}
+
+.pdf-download span:first-child {
+		display: none;
+}
+
+.pdf-download:hover span:first-child {
+		display: inline-block;
+}
+
+.pdf-download:hover span:last-child {
+		display: none;
+}
+
+</style>
+
 {% endblock %}
