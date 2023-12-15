@@ -114,7 +114,7 @@
               {% for exhibition_view in exhibition.exhibition_view_set.all %}
               <div class="col-lg-6">
                   <a class="gallery-image" rel="gallery" href="{{exhibition_view.image.url}}">
-                      <img src="{{exhibition_view.image.url}}" alt="Table Full of Spices" class="w-100 mb-2 mb-md-4 shadow-1-strong rounded" />
+                    <img src="{{ exhibition_view.image.url }}" alt="Table Full of Spices" class="w-100 mb-2 mb-md-4 shadow-1-strong rounded" loading="lazy" />
                   </a>
       
                   <h5 style="font-size: 11px;"><strong>{{exhibition_view.title}}</strong></h5>
@@ -202,4 +202,20 @@
     </section>
   </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/lozad@1.14.0/dist/lozad.min.js"></script>
+
+<script>
+  const exhibitionContainer = document.getElementById('carouselExampleIndicators');
+  const observer = lozad('.lozad', {
+    loaded: function (el) {
+      el.classList.remove('lozad');
+    }
+  });
+
+  // Observar las imágenes cuando se hace scroll
+  window.addEventListener('scroll', function () {
+    observer.observe();
+  });
+</script>
+
 {% endblock %}
